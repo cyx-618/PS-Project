@@ -16,8 +16,7 @@ print("Welcome to SPM Survival Simulator! you will be experiencing the life of a
 print("----------------------------------------------------------------------------------------------------------------------------------------")
 
 #creating menu 
-coloredMenu=termcolor.colored("MENU",color="blue")
-coloredMenu=pyfiglet.figlet_format("MENU",font="isometric1")
+coloredMenu=pyfiglet.figlet_format("Menu",font="isometric1")
 print(coloredMenu)
 
 def menu():
@@ -29,7 +28,10 @@ menu()
 option=int(input("Please select an option: "))
 while option !=3:
     if option==1:
-       option1()
+       print("Game starting...")#game start...
+       print("**************************************************************************************************************")
+
+
       
     elif option==2:
      with open("playerdata.txt","r") as f:
