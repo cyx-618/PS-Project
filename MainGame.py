@@ -20,7 +20,8 @@ with open("playerdata.txt","a") as f:
    f.write("Number of Attempts:"+str(attempts)+"\n")
 
 
-
-print("------------------------------------------------------------------------------------------ ")
 print("Game Start!!!")
-
+print("------------------------------------------------------------------------------------------ ")
+print("You are a university student who has already passed the SPM exam for a long time. One day, when youwalked back home after ")
+print("you finished your lectures,suddenly fell into a big hole… ")
+input()
