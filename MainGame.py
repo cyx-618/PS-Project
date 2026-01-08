@@ -1035,3 +1035,283 @@ print(f"""{Fore.BLUE}
 input()
 #Day6 End
 #Day7 Start
+
+print("Day 7...")
+print("13Days left")
+print("-"*100)
+print("Today is the seventh day of your SPM exam preparation journey.")
+print(f"Your main mission for today is study {color_blue}English{color_reset}!")
+print(f"{color_green}(⚠️ Remember: This subject is very helful for your SPM success!){color_reset}")
+print("Stay possitive and keep moving forward! Don't give up!", random.choice(kaomoji_fighting))
+print()
+print(f"Do you want to {color_red}STUDY{color_reset}", random.choice(emoji_study), "or", f"{color_red}read story book (Little Prince){color_reset}", random.choice(emoji_rest), "today?")
+print("STUDY or READ STORY BOOK")
+choice=str(input("Please enter your choice:")).upper()
+#check validity of input
+while choice!="STUDY" and choice!="READ STORY BOOK":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or READ STORY BOOK.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+print("-"*100)
+#taskbar end
+#loop for study
+if choice=="STUDY":
+    sp+=5
+    print("📚📖✨ Let's get studying!!! 🚀🔥")
+    questions=[
+        "1) Take a sandwich with you ________ you get hungry later.",
+        "2) Do you think it’s ________ rain tomorrow?",
+        "3) I’m busy on Friday, so I ________ come.",
+        "4) I was ________ exhausted by the end of the day.",
+        "5) Winters here ________ be really cold sometimes, so make sure you bring warm clothes!",
+    ]
+
+    options=[
+        ["A. if","B. in case","C. when","D. so as not to"],
+        ["A. going","B. to","C. will","D. going to"],
+        ["A. don't","B. not can","C. am not","D. can't"],
+        ["A. incredilble","B. extremely","C. completely","D. very"],
+        ["A. might","B. may","C. could","D. can"],
+    ]
+
+    answers=[
+        "B","D","D","C","D"
+    ]
+
+    explainations=[
+        "‘In case’ = you do something to be prepared, because you aren’t sure what will happen. In this situation, you don’t know if you will get hungry or not. But you take a sandwich anyway, just to be prepared.",
+        "‘Going to’ and ‘will’ can both be used to make predictions, but in this sentence, we already have ‘it’s’, which means we can’t use ‘will’. Otherwise, you could say ‘Do you think it will rain tomorrow?’ with no difference in meaning.",
+        "‘I don’t come’ would mean regularly, many times, so it doesn’t fit here, because we’re talking about one time (this Friday). We use ‘can’ + ‘not’ = ‘can’t’/’cannot’ (‘can’t’ is more common in spoken English).",
+        "‘Exhausted’ has a strong meaning, so we can only use certain adverbs. In the same way, you can’t say “I was completely tired”, because ‘completely’ can only be used with adjectives which have a strong meaning.",
+        "‘Can’ is used here because we are talking about a general possibility. ‘Could’. ‘may’ and ‘might’ are used for specific possibilities, at one moment in time. In addition, ‘could’ refers to general possibility in the past, e.g. “When I was a child, winters here could be really cold sometimes.”",
+    ]
+
+    #initial score and question number
+    score=0
+    question_number=0
+
+    #queation loop
+    #use for loop to go through all questions
+    for question_number in range(len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number])
+        #print option for each question
+        for option in options[question_number]:# inside the for loop
+            print(option)
+        print()
+        #ask for answer
+        answers_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        while answers_input not in ["A","B","C","D"]:
+            #check whether the input is valid or not
+            print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+            answers_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        #check the correctness of the answer
+        if answers_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answer!")
+            print(f"{color_green}Great Job!!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answer!")
+            print(f"{color_yellow}Don't worry! Success starts with practice!{color_reset}",random.choice(kaomoji_fighting))
+        print()
+        print(f"{color_skyblue}Explanation:",explainations[question_number],f"{color_reset}")
+        print()
+        print("Your current score is :", score,"out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("Keep pushing forward!",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is:", score, "out of", len(questions), random.choice(emoji_happy))
+
+#choice for reading story book
+else:
+    sl-=5
+    print("You chose to read story book today. Enjoy your time!", random.choice(kaomoji_happy))
+    print("📚✨ LET’S START READING!!! 🚀🔥")
+    ascii_art_book="""
+      _.--._  _.--._
+,-=.-":;:;:;\':;:;:;"-._
+\\\:;:;:;:;:;\:;:;:;:;:;\
+ \\\:;:;:;:;:;\:;:;:;:;:;\
+  \\\:;:;:;:;:;\:;:;:;:;:;\
+   \\\:;:;:;:;:;\:;::;:;:;:\
+    \\\;:;::;:;:;\:;:;:;::;:\
+     \\\;;:;:_:--:\:_:--:_;:;\
+      \\\_.-"      :      "-._\
+       \`_..--""--.;.--""--.._=>
+        "
+    """
+    print(ascii_art_book)
+    print()
+    print("Chapter 1: We are introduced to the narrator, a pilot, and his ideas about grown-ups")
+    print()
+    print("Once when i was six years old i saw a magnificent picture in a book, called True Stories from Nature,")
+    print("about the primeval forest. It was a picture of a boa constictor in the act of swallowing a wild beast.")
+    print("Here is a copy of the drawing.")
+    input(f"{color_red}Press Enter to see the drawing...{color_reset}")
+    print()
+    print("In the book it said: 'Boa constrictors swallow their prey whole, without chewing. Afterward they are no")
+    print("longer able to move, and they sleep for six months they need for digestion.'")
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("In those days i thought a lot about jungle adventure, and eventuallymanaged to make my first drawing......")
+    print()
+    print("See you tomorrow for more studying!", random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+print(f"{color_pink}~"*125,f"{color_reset}")
+
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 7:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#Day7 End
+#Day8 Start
+
+print("Day 8...")
+print("12Days left")
+print("-"*100)
+print("Today is the eighth day of your SPM exam preparation journey.")
+print(f"Your main mission for today is study {color_blue}English{color_reset}!")
+print(f"{color_green}(⚠️ Remember: This subject is very helful for your SPM success!){color_reset}")
+print("Stay possitive and keep moving forward! Don't give up!", random.choice(kaomoji_fighting))
+print()
+print(f"Do you want to {color_red}STUDY{color_reset}", random.choice(emoji_study), "or", f"{color_red}go for cycling (Healthy and fun){color_reset}", random.choice(emoji_rest), "today?")
+print("STUDY or GO FOR CYCLING")
+choice=str(input("Please enter your choice:")).upper()
+#check validity of input
+while choice!="STUDY" and choice!="GO FOR CYCLING":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or GO FOR CYCLING.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+print("-"*100)
+#taskbar end
+
+#loop for study
+if choice=="STUDY":
+    sp+=5
+    print("📚✨ LET'S START STUDYING!!! 🚀🔥")
+    questions=[
+        "1) _______ spent time abroad when I was a student, I found it easier to get used to ________ in another country.",
+        "2) Let’s go to the cinema." 
+        "   Great idea! What film ________ we watch?",
+        "3) If I had more time, I ________ do more exercise.",
+        "4) For each of the following, choose the sentence in which the subjects and verbs have been correctly identified and in which the subjects and verbs agree. The subjects are in bold and the verbs are underlined."
+        "5) For each of the following, choose the sentence in which the subjects and verbs have been correctly identified and in which the subjects and verbs agree. The subjects are in bold and the verbs are underlined."
+    ]
+
+    options=[
+        ["A. Have...live","B. Having...live","C. Having...living","D. To have...living"],
+        ["A. are we going to","B. will","C. shall","D. do"],
+        ["A. would","B. will","C. 'm going to","D. want to"],
+        ["A. There's three strawberries left","B. There's three strawberry left","C. There are three strawberries left","D. There are three strawberry left."],
+        ["A. Some of my goals have yet to be met.","B. Some of my goal have yet to be met.","C. Some of my goals is yet to be met.","D. Some of my goals have yet been met."],
+    ]
+
+    answers=[
+        "C","C","A","C","A"
+    ]
+
+    explainations=[
+        "‘Having spent…’ = ‘Because I spent…’ ‘Get used to’ + -ing = ‘adapt to a new situation’",
+        "We use ‘shall’ for offers and suggestions when we ask a question. It’s only used in questions with ‘I’ and ‘we’ – not ‘you’, ‘they’ or ‘he’/’she’/’it’.",
+        "We use this form to talk about a situation which is imaginary or unreal: ‘if’ + past simple –> ‘would’ + infinitive. In this case, the situation is unreal because I don’t have time, so I can’t do more exercise.",
+        "There is/ There's → singular(one item); There are → plural (more than one item)",
+        "Goals = plural, so we need the plural verb have. Also, some of needs a plural noun after it."
+    ]
+
+    #initial score and question number
+    score=0
+    question_number=0
+    #queation loop
+    #use for loop to go through all questions
+    for question_number in range(len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number])
+        #print option for each question
+        for option in options[question_number]:# inside the for loop
+            print(option)
+        print()
+        #ask for answer
+        answers_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        while answers_input not in ["A","B","C","D"]:
+            #check whether the input is valid or not
+            print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+            answers_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        #check the correctness of the answer
+        if answers_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answer!")
+            print(f"{color_green}Excellent, keep it up!!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answer!")
+            print(f"{color_yellow}Keep trying! Practice makes perfect!{color_reset}",random.choice(kaomoji_fighting))
+        print()
+        print(f"{color_skyblue}Explanation:",explainations[question_number],f"{color_reset}")
+        print()
+        print("Your current score is :", score,"out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("You can do it!",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is:", score, "out of", len(questions), random.choice(emoji_happy))
+
+#choice for going cycling
+else:
+    sl-=5
+    ascii_art_cycling="""
+ o__  
+ ,>/_       
+(*)`(*).....
+
+    """
+    print("You chose to go for cycling today. Enjoy your time!", random.choice(kaomoji_happy)) 
+    print(ascii_art_cycling)
+    print()
+    print("See you tomorrow for more studying!", random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+
+
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 8:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#Day8 End
+#Day9 Start
+
+
