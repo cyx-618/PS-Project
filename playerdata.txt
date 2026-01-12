@@ -1,22 +1,17 @@
-import random
 
-# Two separate lists
-questions = ["2 + 2?", "Capital of France?", "Red Planet?"]
-answers = ["4", "Paris", "Mars"]
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 8:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
 
-# 1. Create a list of indices [0, 1, 2]
-indices = list(range(len(questions)))
-
-# 2. Shuffle ONLY the indices
-random.shuffle(indices)
-
-# 3. Loop through the shuffled indices
-for i in indices:
-    # Use the shuffled index 'i' to pull the matching pair
-    print(f"\nQuestion: {questions[i]}")
-    user_input = input("Answer: ")
-    
-    if user_input.lower() == answers[i].lower():
-        print("Correct!")
-    else:
-        print(f"Wrong! It was {answers[i]}")
+""")
+input()

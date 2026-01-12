@@ -1314,4 +1314,451 @@ input()
 #Day8 End
 #Day9 Start
 
+#Start Day 9
+print("Day 9...")
+print("11 Days left")
+print("-"*100)
+print("Today is the ninth day of your SPM exam preparation journey.")
+print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
+print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
+print("Keep moving forward!!! Believe in yourself!", random.choice(kaomoji_fighting))
+print()
+print(f"Do you want to {color_red}STUDY{color_reset}", random.choice(emoji_study), "or", f"{color_red}go to the ANIME FEAST ?{color_reset}", random.choice(emoji_rest), "today?")
+print("STUDY or ANIME FEAST")
+choice=str(input("Please enter your choice:")).upper()
+#check validity of input
+while choice!="STUDY" and choice!="ANIME FEAST":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or ANIME FEAST.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+    print("-"*100)
+#taskbar end
 
+#start the study loop
+if choice=="STUDY":
+    sp+=5
+    print("Nice!!! Let's begin our study journey for today~~~",random.choice(emoji_happy))
+
+    #use for loop to ask 5 question
+    questions=[
+        "1) Apakah tugas Temenggung dalam Kerajaan Kesultanan Melayu Melaka?" ,
+        "2) Bagaimanakah golongan kelas pertengahan berpendidikan Barat menentang Britiah di Burma?",
+        "3) Perang Dunia Pertama berlaku pada tahun 1914 hingga 1918." 
+        "Apakah faktor yang mencetuskan perang tersebut?"
+        "4) Bagaimanakah Perjanjian Persekutuan Tanah Melayu 1948 membela nasib penduduk asal di Tanah Melayu",
+        "5) Bagaimanakah Britiah menumpaskan kegiatan Min Yuen?"
+    ]
+
+    options=[
+        ["A. Menjatuhkan hukuman mati","B. Mengetuai rombongan diplomatik","C. Mengawai keamanan dqalam negeri","D. Melicinkan kutipan cukai di pelabuhan","","Hint: Tingkatan 4 M/s 9"],
+        ["A. Membentuk Katipunan","B. Menubuhkan Persatuan Belia Buddha","C. Menerbitkan akhbar Tribune Indige","D. Melancarkan pemberontakan Saya San","","Hint: Tingkatan 4 M/s 29"],
+        ["A. Pengeboman Pearl Harbour","B. Perbezaan ideologi antara negara","C. Persengketaan Rusia dengan Britian","D. Pembunuhan pewaris takhta Austria-hungary","","Hint: Tingkatan 4 m/s 54"],
+        ["A. Melindungi hak peribumi","B. Memonopoli pentadbiran negara","C. Memansuhkan kerakyatan imigran","D. Membentuk parti politik mengikut kaum","","Hint: Tingkatan 4 m/s 127"],
+        ["A. Memeterai perjanjian damai","B. Membuka penempatan baru","C. Melancarkan serangan gerila","D. Menangkap pemimpin radikal","","Hint: Tingkatan 4 m/s 157"],
+    ]
+
+    answers=[
+        "C","B","D","A","B"
+    ]
+
+    #Initial score and question number
+    score=0
+    question_number=0
+    #question loop
+    #use for loop to go through and print every question
+    for question_number in range(len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number]) #print question follow the flow index0-4
+        #print ooption for every question
+        for option in options[question_number]: #example if question_number=0 print the first option for the first question
+            print(option)
+        print()
+        #ask for the answer
+        answer_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        #check whether the answer enter is valid or not
+        while answer_input not in ["A","B","C","D"]:
+            print("⚠️",f"{color_yellow}Invalid  answer! Please enter A, B, C, or D.{color_reset}")
+            answer_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        #check the correctness of the answer
+        if answer_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answer!")
+            print(f"{color_green}Focus and fight! Your effort today shape your future!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answer!")
+            print(f"{color_yellow}Keep moving forward, never give up!!{color_reset}",random.choice(kaomoji_fighting))
+        print()
+        print("Your current score is :", score, "out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("You are strong than you think!!",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is :", score, "our of", len(questions),random.choice(emoji_happy))
+
+#if user choose the other choice
+else:
+    sl-=5
+    ascii_art_animefeast=f"""{Fore.LIGHTGREEN_EX}
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠟⠋⠉⠉⠉⠉⠛⢿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⠇⢀⣾⡄⠀⠀⠀⠀⠀⠀⣷⡄⠈⢿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡟⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⣿⣿⠀⢸⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⡇⠀⠈⠛⠁⠀⠀⠀⠀⠀⠀⠉⠁⠀⢸⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⡇⠰⣿⣿⠆⠀⠀⠀⠀⠀⠰⠿⠿⠗⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⡇⠀⠠⠤⠀⠀⠀⠀⠀⠀⠀⠒⠒⠀⢸⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡇⠀⢰⣿⡆⠀⠀⠀⠀⠀⠀⢸⣿⡆⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⠀⠈⣿⡇⠀⠀⠀⠀⠀⠀⢸⡿⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⡆⠀⢹⠁⠀⠀⠀⠀⠀⠀⠸⠁⠀⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠺⠿⠿⠿⠿⠟⠀⢀⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠤⠤⠄⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣤⣤⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀
+⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀
+⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀
+⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀
+⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀
+⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀
+⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
+⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀
+⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀
+⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀
+
+
+"""
+    print("You choose to go to the anime feast today. Enjoy your time!", random.choice(kaomoji_happy))
+    print(ascii_art_animefeast)
+    print()
+    print("See you tomorrow for more studying!", random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+print(f"{color_pink}~"*125,f"{color_reset}")
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 9:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#Day 9 End
+#Day 10 Starts
+
+print("Day 10...")
+print("10 Days left")
+print("-"*100)
+print("Today is the tenth day of your SPM exam preparation journey")
+print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
+print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
+print("Fast and focused---that's how winner do it!!", random.choice(kaomoji_happy))
+print()
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}go to the MUSIC FESTIVAL?{color_reset}",random.choice(emoji_rest))
+print("STUDY or MUSIC FESTIVAL")
+choice=str(input("Please enter your choice:")).upper()
+#check validity 
+while choice!="STUDY" and choice!="MUSIC FESTIVAL":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or MUSIC FESTIVAL.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+print("-"*100)
+#taskbar end
+
+#start loop
+if choice=="STUDY":
+    sp+=5
+    print("Great! Is is time to level up your brain!!",random.choice(emoji_happy))
+
+    questions=[
+        "1) Apakah ciri negara berdaulat?"
+        ""
+        "I Pentadbiran yang sistematik"
+        "II Sempadan yang jelas"
+        "III Rakyat berbilang kaum"
+        "IV Naungan kerajaan lain",
+        "2) Mengapakah konsep pengasingan kuasa penting dalam amalan demokrasi berparlimen",
+        "3) Kerajaan Persekutuan dan Kerajaan Negeri berusaha untuk membolehkan golongan pertengahan memiliki rumah kediaman."
+        ""
+        "Bagaimanakah kedua-dua kerajaan mencapai matlamat tersebut?",
+        "4) Pada tahun1962, satu referendum telah diadakan di Singapura."
+        ""
+        "Mengapakah referendum tersebut diadakan?",
+        "5) Dasar Kebudayaan Kebangsaan telah digubal pada tahun1971."
+        ""
+        "Mengapakah dasar tersebut diperkenalkan?",
+    ]
+
+    options=[
+        ["A. I dan II","B. I dan IV","C. II dan III","D. III dan IV","",f"{color_skyblue}Hint: Tingkatan 5 m/s 8-9{color_reset}"],
+        ["A. Mengelakkan campur tangan luar","B. Meningkatkan mobiliti penduduk","C. Mewujudkan pemerintahan yang adil","D. Mendapat pengiktirafan antarabangsa","",f"{color_skyblue}Hint: Tingkatan 5 m/s 55{color_reset}"],
+        ["A. Menyekat pembinaan rumah mewah","B. Melarang warga asing membeli rumah","C. Memperbanyakkan rumah mampu milik","D. Membeli pinjaman perumahan tanpa faedah","",f"{color_skyblue}Hint: Tingkatan 5 m/s 77{color_reset}"],
+        ["A. Mengukuhkan kesetiaan rakyat","B. Mengekalkan pemerintahan British","C. Menilai pengaruh parti pembangkang","D. Menentukan sokongan gagasan Malaysia","",f"{color_skyblue}Hint: Tingkatan 5 m/s 100{color_reset}"],
+        ["A. Memupuk semangat kenegerian","B. Memperkukuh integrasi nasional","C. Menghalang kemasukan pengaruh luar","D. Mengawal penggunaan bahasa asing","",f"{color_skyblue}Hint: Tingkatan 5 m/s 150{color_reset}"],
+    ]
+
+    answers=[
+        "A","C","C","D","B"
+    ]
+
+    #initial score and question_number
+    score=0
+    question_number=0
+    for queation_number in range (len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number])
+        for option in options[question_number]:
+            print(option)
+        print()
+
+        answer_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        while answer_input not in ['A','B','C','D']:
+            print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+            answer_input=str(input("Please enter your answer(A/B/C/D): ")).upper()
+        
+        if answer_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answers!")
+            print(f"{color_green}You're on fire!!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answers!")
+            print(f"{color_yellow}Keep going---practice makes perfect!!!{color_reset}",random.choice(kaomoji_fighting))
+        
+        print()
+        print("Your current score is :", score,"out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("Nice! Your effort today=your success tomorrow!",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is:", score,"out of", len(questions), random.choice(emoji_happy))
+
+#for the second choice
+else:
+    sl-=5
+    ascii_art_music="""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢿⡀⠀⠀⠀⠀⣤⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⣤⣀⣸⠏⠘⣧⠀⠀⠀⠀⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢦⡀⠈⠀⠀⠙⢛⣿⡿⠂⠀⠀⠠⠄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠦⠀⠀⠀⣰⡏⠀⣀⠀⢸⡏⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡶⠟⠙⢷⣄⣇⠀⠀⠰⣶⣿⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠈⠛⠀⠀⠚⠛⠿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣄⣀⣀⠀⠀⠀⠀⠀⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠀⠀⠀⠀⢀⣿⠛⠛⠻⠿⣿⣿⣷⡄⠀⠀⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⢸⡏⠀⠀⠀⠀⠀⣼⡿⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠁⠀⢀⣀⠀⢠⣿⠃⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⠿⠿⠿⣿⣶⣶⡆⠀⠘⠿⠿⠋⠀⠀⢻⣿⣿⣿⡏⠀⠀⠀⠘⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢰⡟⠀⠀⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣾⠁⠀⠀⠀⠀⠀⣿⠇⠀⠀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⢀⡄⠀⠀
+⠀⠀⠀⠀⠀⣴⣶⣾⡏⠀⠀⠀⣀⡀⢠⡿⠀⠀⠀⠀⠀⢿⡲⠋⣇⣀⡀⠀⠸⡗⠋⣇⡀⠀
+⠀⠀⠀⠀⠀⠻⣿⡿⠃⠀⠀⢺⣿⣿⣿⠃⠀⠀⡄⠀⢀⣜⣥⣄⡖⠋⠁⠀⠛⠒⣾⠉⠉⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠋⠁⠀⠀⢰⣿⡄⠀⠀⠀⠈⠛⠀⠀⡀⠀⠀⠈⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⢿⡄⠀⠀⠀⠀⠐⣶⣷⠤⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠘⠀⢀⣀⣠⣤⡤⠿⠀⠈⠿⠛⢛⣿⠟⠀⠁⠉⠀⠀⠀⠀⠀⠀
+⠀⠈⠁⠀⠀⢦⣤⣿⣀⡀⠀⠀⠀⠉⠳⢦⣤⡀⠀⠀⠀⢰⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡀⡀⠀⠀⠀⣰⠿⢿⡏⠁⠀⢀⡀⠀⠀⠀⣸⠃⢀⣤⣄⡈⣷⡀⠀⠐⠓⠀⠀⠀⠀⠀⠀⠀
+⠚⠏⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠁⠀⠀⠀⣿⡴⠛⠁⠉⠛⠾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"""
+
+    print("You choose to go to the music festival today~ Enjoy your time~",random.choice(kaomoji_happy))
+    print(ascii_art_music)
+    print()
+    print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+print(f"{color_pink}~"*125,f"{color_reset}")
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 10:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#Day 10 End 
+#Day 11 Start
+
+print("Day 11...")
+print("9 Days left")
+print("-"*100)
+print("Today is the eleventh day of your SPM exam preparation journey")
+print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
+print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
+print("Saty sharp, saty confident!!!", random.choice(kaomoji_happy))
+print()
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}go to the FOOD FESTIVAL?{color_reset}",random.choice(emoji_rest))
+print("STUDY or FOOD FESTIVAL")
+choice=str(input("Please enter your choice:")).upper()
+#check validity 
+while choice!="STUDY" and choice!="FOOD FESTIVAL":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or FOOD FESTIVAL.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+print("-"*100)
+#taskbar end
+
+#start loop
+if choice=="STUDY":
+    sp+=5
+    print("Great! Let's begin our study journey for today~",random.choice(emoji_happy))
+
+    questions=[
+        "1) Bagaimanakah Dasr Ekonomi Baru (DEB) dapat memberi keadilan kepada semua kaum?",
+        "2) Dasar pembangunan Nasional (DPN) bermatlamat untuk mencapai perpaduan melalui pengagihan kekayaan negara."
+        ""
+        "Bagaimanakah hasrat tersebut dapat dicapai?",
+        "3) Setelah mencapai kemerdekaan, Mlaysia telah menjadi anggota Pertubuhan Bangsa-Bangsa Bersatu (PBB)."
+        ""
+        "Mengapakah Malaysia menganggotai pertubuhan tersebut?",
+        "4) Malaysia menjadikan ASEAN sebagai platform mengisytiharkan perubahan dasar luar negara pada peringkat serantau dan global."
+        ""
+        "Bagaimanakah Malaysia merealisasikan komitmen tersebut?",
+        "5) Komuniti ASEAN ditubuhkan pada tahun 2015 melalui Deklaras Kuala Lumpur sewaktu Sidang Kemuncak ASEAN ke-27."
+        ""
+        "Apakah matlamat penubuhan komuniti tersebut?"
+        ""
+        "I Menjana pertumbuhan ekonomi"
+        "II Meningkatkan kemahiran tenaga kerja"
+        "III Menetapkan nilai mata wang tunggal"
+        "IV Menjamin keselamatan serantau",
+    ]
+
+    options=[
+        ["A. Membasmi buta huruf","B. Meningkatkan infrastruktur","C. Menyusun semula masyarakat","Menambah jumlah penduduk","",f"{color_skyblue}Hint: Tingkatan 5 m/s 167{color_reset}"],
+        ["A. Melaksanakan ekonomi kawalan","B. Memantau pengurusan kewangan negara","C. Mengimbangi pembangunan antara negeri","D. Mengawal peningkatan golongan pertengahan","",f"{color_skyblue}Hint: Tingkatan 5 m/s 174{color_reset}"],
+        ["A. Menamatkan ancaman luar","B. Memelihara kedaulatan negara","C. Mendapatkan bantuan ketenteraan","D. Menyertai perdagangan antarabangsa","",f"{color_skyblue}Hint: Tingkatan 5 m/s 198{color_reset}"],
+        ["A. Mengadakan perjanjian Pertahanan Lima Negara (FPDA)","B. Menandatangani Prejanjian Umum Tarif dan Perdagangan (GATT)","C. Membina Pusat Serantau untuk Sains da Matematiik (RECSAM)","D. Mengumumkan Deklarasi Zon Aman, Bebas dan Berkecuali(ZOPFAN)","",f"{color_skyblue}Hint: Tingkatan 5 m/s 210{color_reset}"],
+        ["A. I dan II","B. I dan IV","C. II dan III","D. III dan IV","",f"{color_skyblue}Hint: Tingkatan 5 m/s 242{color_reset}"],
+    ]
+
+    answers=[
+        "C","C","B","D","B"
+    ]
+
+    #initial score and question_number
+    score=0
+    question_number=0
+    for queation_number in range (len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number])
+        for option in options[question_number]:
+            print(option)
+        print()
+
+        answer_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        while answer_input not in ['A','B','C','D']:
+            print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+            answer_input=str(input("Please enter your answer(A/B/C/D): ")).upper()
+        
+        if answer_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answers!")
+            print(f"{color_green}Well done!!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answers!")
+            print(f"{color_yellow}Mistakes are just practice runs. Try again!!{color_reset}",random.choice(kaomoji_fighting))
+        
+        print()
+        print("Your current score is :", score,"out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("Push foward, even when tired.",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is:", score,"out of", len(questions), random.choice(emoji_happy))
+
+#for the second choice
+else:
+    sl-=5
+    ascii_art_food="""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⠖⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⣰⠟⠁⣀⣀⠀⠈⠻⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠞⡡⠊⡡⢖⡦⠀⢸⡇⠀⡞⠀⠈⢱⠀⠀⢹⡆⠀⠀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡴⢋⠴⣫⠔⣫⠔⠋⠀⠀⢸⣇⠀⠑⠦⠤⠞⠀⠀⣰⠇⠀⠀⢀⡴⠛⠉⠀⠉⢹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡤⠾⣫⣼⠵⣋⠥⠋⠀⠀⠀⠀⠀⠈⠛⠷⠶⠦⣤⣀⣀⣴⠟⠀⠀⢠⡏⠂⠀⠀⠀⢀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⠖⠺⠋⠁⠘⠗⠹⣧⡚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠈⢷⣷⡄⢀⣴⠟⠁⠀⠀⣀⣠⣀⣀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⢄⡄⠘⢵⣀⣤⣞⠛⠲⢦⣤⡀⠀⢀⣴⠟⠛⠫⣖⢄⣠⣀⣀⠀⠀⠈⠉⠉⠉⠀⠀⠀⢰⣟⣁⠘⢞⡌⢳⡄⠀⠀⠀
+⠀⠀⢀⡴⣪⣿⡷⡆⠀⠀⠀⠀⠀⠀⠈⣿⠁⠉⠻⢦⣄⠈⢽⣷⣼⠼⠞⠁⠀⡈⢣⢟⠛⠛⠿⠷⣶⣶⣤⣀⠀⠀⠀⠘⡏⢯⣆⠈⢻⣦⠙⣦⠀⠀
+⢠⢔⣿⡾⣿⢻⡇⢾⣤⠀⠀⠀⠀⠀⠀⠸⣶⣤⡀⠀⠉⠻⣦⡙⢿⣷⡄⢀⡞⠃⠀⢻⡶⠶⠶⢤⣤⣈⠙⠛⢿⣦⣄⡀⠙⣆⠻⣧⡀⠹⣷⡘⣦⡀
+⠈⠛⠗⠉⠀⢣⣛⣈⣿⠀⠀⠀⠀⠀⠀⠀⢧⣈⡙⢶⣄⡀⢈⡿⠚⠛⠻⣦⠀⠀⠒⣶⠇⠀⢀⣠⡴⠿⠿⣦⣄⠈⠻⢿⣦⡘⢧⡘⢿⠶⠋⠉⠹⡇
+⠀⠀⠀⠀⢀⣴⣿⠟⢳⠀⠀⠀⠀⠀⠀⠀⠘⣏⠛⢶⣌⠙⠏⠀⠀⠀⠀⣿⢿⣳⡖⠁⠀⣴⠟⠁⠀⠀⠀⠀⠱⢷⡄⠀⠻⣿⡌⢳⣼⡀⠀⢀⣴⠇
+⠀⠀⠀⢀⣾⡟⢁⣰⡿⡆⠀⠀⠀⠀⠀⠀⠀⠪⣠⣞⡿⠳⣵⣤⣤⡶⢾⢿⠯⣓⣺⣧⣾⢁⠞⠉⠑⡄⠀⠀⠀⠘⣝⣆⠀⠙⣿⡄⠈⠙⠛⠛⠁⠀
+⠀⠀⠀⣸⣿⢠⠋⢻⢀⢸⠀⠀⠀⠀⠀⡄⡄⠀⠁⣠⡀⢉⡬⠞⠛⠛⠋⠙⡏⢶⣾⣟⡏⡏⠀⠀⠀⡀⠀⠀⠀⢠⣏⣽⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢻⣿⢰⡀⢸⣮⠸⡆⠀⠀⣀⠤⢌⣁⣠⠴⣿⠑⣁⠀⠪⣣⣾⡿⠃⠀⠀⠀⠸⣧⠓⢤⡤⠜⠁⠀⠀⠀⣸⡿⠋⠀⡴⣿⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⣿⣧⡱⣄⠙⠻⢿⣄⣻⣋⣉⡟⠀⠀⠀⠉⠻⠊⠀⠘⠋⠁⢰⣲⠀⠀⠀⠀⠈⣦⠀⢀⣀⣠⣤⠶⠟⠋⣀⠤⠊⣴⡿⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠻⣷⣤⡑⠂⢤⣈⠉⠛⠛⠓⠶⠶⢤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣶⣶⠶⠿⠛⠛⠉⣉⡠⠄⠒⢊⣠⣴⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠸⣿⣿⣷⣦⣤⣉⣁⠐⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢀⣀⣀⣤⣶⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣾⣶⣶⣶⣦⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣶⣶⣾⣿⡿⠻⣿⣿⣿⡿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⣀⠀⠉⠋⠀⢸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣟⣟⣿⣿⣯⣿⣿⢿⣿⣿⠿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⠉⠑⣴⠒⢆⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⢫⡽⡿⠿⠿⣿⢿⠿⢿⣷⣿⣾⣽⣿⣿⣿⢿⢿⣿⡇⠀⢀⣼⣤⣤⣶⢶⣼⠈⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣹⣾⢻⠐⣯⣇⣏⡳⢼⣿⣾⡏⣽⣿⠋⣾⣿⣿⣼⣿⣇⢸⢹⣿⣼⣿⣿⣾⣿⣦⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⡿⢷⣤⣼⠃⣽⣿⢾⡇⣤⣿⣿⠤⣾⣿⢶⣿⣤⣬⣼⡟⠛⠘⣿⣿⣺⣿⣻⣟⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣏⣞⣛⣿⡤⣻⣿⣽⣵⣷⣯⣿⣵⣿⣿⣿⣿⣿⣿⣿⣷⢰⠉⠙⢿⣿⣿⣿⣿⣿⢻⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣶⣿⣿⡟⣙⣒⡉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⢆⠀⠸⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣷⣶⣦⣾⣿⣿⣿⣿⣿⣾⣿⣷⣿⣿⣿⣿⣿⣦⣳⣤⣬⣭⣿⣿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"""
+
+    print("You choose to go to the food festival today. Enjoy your time~",random.choice(kaomoji_happy))
+    print(ascii_art_food)
+    print()
+    print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+print(f"{color_pink}~"*125,f"{color_reset}")
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 11:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#Day 11 End
+#Day 12 start
