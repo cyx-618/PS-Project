@@ -55,7 +55,6 @@ if choice=="study" or choice=="STUDY" or choice=="Study":
     #multiple choice 4 options for each question
     options=[
         ["A. Orang","B. Haiwan","C. Makhluk","D. Ternakan"],
-        ["A. bunga-bungaan","B. ubat-ubatan","C. biji-bijian","D. bau-bauan"],
         ["A. kuat","B. kasar","C. tinggi","D. kesat"],
         ["A. mengejut","B. menonjol","C. mendesak","D. mendadak"],
         ["A. nipis","B. tebal","C. berkilat","D. berwarna"]
