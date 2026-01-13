@@ -155,3 +155,49 @@ print(f"{Fore.RED}End of Sejarah Paper,See you tommorrow for MM Paper{Fore.RESET
 #end of day 3 spm
 #--------------------------------------------------------------------------------------------------
 #Day 4 Start
+mm_q=[
+    " Jasseem drove at a speed of 110km/h. He decreased his speed to 80km/h in 5 minutes. Calculate the deceleration in km/h per second.",
+    "If k is an integer, then the values of k that statisfy both the inequalities k+8>=3 and k+7<6 are",
+    " ",
+    " ",
+    " ",
+    " ",
+    "",
+    "",
+    "",
+    ""
+
+]
+mm_opt=["A. 10.00%","B. 12.50%","C. 13.75%","D. 27.27%",
+        "A. -4, -3, -2","B. -5, -4, -3, -2, -1","C. -4, -3, -2, -1","D. -5, -4, -3, -2",
+        ,
+       ,
+        ,
+        ,
+        ,
+        ,
+        ,
+        
+        ]
+
+mm_ans=["C","D",]
+indices=list(range(len(mm_q)))
+random.shuffle(indices)
+
+
+for count,i in enumerate(indices):
+    print()
+    print("-"*100)
+    print(count+1,mm_q[i])
+    print()
+    print(Fore.GREEN,mm_opt[i*4:(i+1)*4],Fore.RESET)
+    print()
+    user=input("Your answer: ").upper()
+    while user not in ["A","B","C","D"]:
+        user=input(f"{Fore.RED}Invalid Answer!Please enter A,B,C or D: {Fore.RESET}").upper()
+    if user==mm_ans[i]:
+        mm_marks+=2
+    
+print(f"{Fore.RED}End of BM Paper,See you tommorrow for BI Paper{Fore.RESET}")
+
+  
