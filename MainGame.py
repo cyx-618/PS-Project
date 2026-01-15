@@ -20,7 +20,7 @@ color_reset="\033[0m"
 color_pink="\033[35m"
 color_skyblue="\033[36m"
 #color end
-#let player to enter thier name and gender first (by kjq)
+#let player to enter thier name and gender first 
 
 import termcolor
 import pyfiglet
@@ -28,6 +28,7 @@ import colorama
 from colorama import Fore,Back  #(by rc)
 
 colorama.init(autoreset=True)
+
 name=str(input("Enter your name: "))
 while name=="" or name==" ":
    print(f"{Fore.RED}You did not enter your name!")
@@ -60,12 +61,12 @@ print(f"""{Fore.CYAN}
 
 """)
 input()
-print("After the you woke up,you noticed that you are in a new world that you never been in… suddenly a virtual " \
+print("After the you woke up,you noticed that you are in a new world that you never been in… suddenly a virtual " 
 "taskbar appeared in front of you. ")
 print(f"{Fore.CYAN}------------------------------------WELCOME TO SPM SURVIVAL SIMULATOR------------------------------------")
 input()
 print(f'A female voice echoed in your head:"Hi {name}",My name is Siri,I am your virtual assistant in this world.')
-print("Let me simply explain what happened to you.You have been trapped in this world , all you have to do is fin-" \
+print("Let me simply explain what happened to you.You have been trapped in this world , all you have to do is fin-" 
 "ish the mission given to you. ")
 
 #simply expalin to the player game rules
@@ -792,7 +793,7 @@ if choice=="STUDY":
 #else user want to fishing
 else:
    sl-=5
-   ascii_art_fishing="""
+   ascii_art_fishing=r"""
          ,%&& %&& %
    ,%&%& %&%& %&
 %& %&% &%&% % &%
@@ -1134,7 +1135,7 @@ else:
     sl-=5
     print("You chose to read story book today. Enjoy your time!", random.choice(kaomoji_happy))
     print("📚✨ LET’S START READING!!! 🚀🔥")
-    ascii_art_book="""
+    ascii_art_book=r"""
       _.--._  _.--._
 ,-=.-":;:;:;\':;:;:;"-._
 \\\:;:;:;:;:;\:;:;:;:;:;\
@@ -1282,7 +1283,7 @@ if choice=="STUDY":
 #choice for going cycling
 else:
     sl-=5
-    ascii_art_cycling="""
+    ascii_art_cycling=r"""
  o__  
  ,>/_       
 (*)`(*).....
@@ -1762,3 +1763,340 @@ print(f"""{Fore.BLUE}
 input()
 #Day 11 End
 #Day 12 start
+
+print("Day 12...")
+print("8 Days left")
+print("-"*100)
+print("Today is the twelfth day of your SPM exam preparation journey")
+print(f"Your main mission for today is to study {color_blue}Sejarah{color_reset}!")
+print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
+print("Slow progress is still progress!! Keep answering, keep learning!!!", random.choice(kaomoji_happy))
+print()
+print("Today your mission is do a revision for SEJARAH but you're very sad today because you sudden miss your family...")
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}WALK AROUND THE PARK? (System suggest)(You may meet a person that help you to cheer up){color_reset}",random.choice(emoji_rest))
+print("STUDY or WALK AROUND THE PARK")
+choice=str(input("Please enter your choice:")).upper()
+#check validity 
+while choice!="STUDY" and choice!="WALK AROUND THE PARK":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or WALK AROUND THE PARK.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+print("-"*100)
+#taskbar end
+
+#start loop
+if choice=="STUDY":
+    sp+=5
+    print("Great! Let's do some quiz for sejarah!",random.choice(emoji_happy))
+
+    questions=[
+        "1) Apakah syarat untuk menjadi pengundi dalam Pilihan Raya Umum Pertama di Tanah Melayu?",
+        "2) Mengapakah Tunku Abdul Rahman dan rombongan kemerdekaan menggunakan kapal laut dari Singapura ke Keranchi pada 1 januari 1956?",
+        "3) Kedaulatan tradisional merujuk kepada",
+        "4) Rancangan Integrasi Murid untuk Perpaduan (RIMUP) telah dilaksanakan di peringkat sekolah"
+        ""
+        "Apakah tujuan dasar tersebut?",
+        "5) Apakah strategi yang digunakan dalam melaksanakan Dasar Ekonomi Baru?",
+    ]
+
+    options=[
+        ["A. Berpengetahuan bahasa inggeris","Mampu berbahasa Melayu","C. Merupakan warganegara","D. Berumur 18 tahun ke atas","",f"{color_skyblue}Hint: Tingkatan 4 m/s 200{color_reset}"],
+        ["A. Menjimatkan kos perjalanan","B. Mengadakan perbincangan","C. Menjelaskan misi rundingan","D. Mendapatkan sokongan luar","",f"{color_skyblue}Hint: Tingkatan 4 m/s 217{color_reset}"],
+        ["A. Pematuhan terhadap perundangan","B. Pemerintahan berkuasa mutlak","C. Pengiktirafan peringkat dunia","D. Persamaan rumun bangsa","",f"{color_skyblue}Hint: Tingkatan 5 m/s 6{color_reset}"],
+        ["A. Mewujudkan minat dalam pelajaran","B. Melahirkan generasi yang kreatif","C. Memupuk semangat setia kawan","D. Menonjolkan identiti kebangsaan","",f"{color_skyblue}Hint: Tingkatan 5 m/s 152{color_reset}"],
+        ["A. Mewujudkan masyarakat perdagangan","B. Pengenalan perindustrian berat","C. Progrm penanaman semula","D. Menyusun semula masyarakat","",f"{color_skyblue}Hint: Tingkatan 5 m/s 167{color_reset}"],
+    ]
+
+    answers=[
+        "C","B","B","C","D"
+    ]
+
+    #initial score and question_number
+    score=0
+    question_number=0
+    for queation_number in range (len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number])
+        for option in options[question_number]:
+            print(option)
+        print()
+
+        answer_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        while answer_input not in ['A','B','C','D']:
+            print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+            answer_input=str(input("Please enter your answer(A/B/C/D): ")).upper()
+        
+        if answer_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answers!")
+            print(f"{color_green}Correct! Nice focus!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answers!")
+            print(f"{color_yellow}You’re improving!!!{color_reset}",random.choice(kaomoji_fighting))
+        
+        print()
+        print("Your current score is :", score,"out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("Every question you practice here builds confidence for the real SPM exam!!",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is:", score,"out of", len(questions), random.choice(emoji_happy))
+
+#for the second choice
+else:
+    sl-=5
+    ascii_art_chair="""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⠴⡀⠖⡖⠠⠤⠤⢄⠶⢢⠤⡠⠄⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⠐⠌⡌⢢⡑⠬⠰⣃⢜⠴⣬⠂⣅⢢⠡⣉⠲⢡⢒⣀⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢠⢀⠀⡌⠌⢇⠀⡤⢱⠀⡧⠈⠀⠼⢈⠁⢨⢁⡃⢱⠆⢢⠔⡩⣄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⡌⢦⡸⠊⠘⠜⣈⠆⢘⠀⡄⢓⠸⠀⡜⠸⢀⡅⡜⠀⢢⢘⠔⡎⣱⠰⡄
+⠀⠀⠀⠀⠀⠀⠀⢀⢠⡖⣭⡶⠂⠀⠀⢘⡄⢋⠸⡂⠇⢌⠘⠀⡅⡖⠴⣠⢁⡘⠤⠊⠀⠈⡖⡭⡃
+⠀⠀⠀⠀⠀⠀⣰⣴⣿⣿⡿⠀⠀⠀⠀⠀⡌⠬⡄⡆⢂⠜⢸⠸⡐⠧⡗⣤⡋⣔⠊⠀⠀⢰⣟⣶⡃
+⠀⠀⠀⢠⣴⣿⣿⣿⠟⠃⠀⠀⠀⠀⠀⠀⢸⠀⡅⡇⢬⠋⢸⣸⢀⢳⢃⡶⢡⠆⠀⢀⣴⣯⡿⠋⠀
+⠀⢀⡸⢉⣿⡟⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠆⡏⢸⣌⠰⣏⠸⡼⢠⡟⢢⣆⡴⣿⠷⠃⠀⠀⠀
+⠀⢸⠄⡃⣾⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠃⡣⢸⡇⣻⡤⡘⡧⢩⣏⢳⠃⠌⠇⠀⠀⠀⠀⠀
+⠀⢸⠘⡄⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⣧⠆⣹⠇⣸⡅⣿⡃⣿⠠⣏⡘⢜⠂⠀⠀⠀⠀⠀
+⠀⠈⡔⡌⣽⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡁⠆⠤⡐⢠⡐⠄⢦⡑⢌⠡⢃⡧⢘⡈⠀⠀⠀⠀⠀⠀
+⠀⢠⠑⡤⢻⡷⠀⠀⠀⠀⢀⣀⣀⠀⠀⣴⡸⣌⠳⣌⢣⡜⣸⢣⡞⣬⢣⣹⡄⢣⠀⠀⠀⠀⠀⠀⠀
+⠀⢸⠸⣀⠁⠿⣿⣷⣾⣿⣿⣿⣿⣿⣿⣷⣏⣿⣹⢾⣇⣿⢱⡿⣾⣷⢿⡿⢀⠇⠆⠀⠀⠀⠀⠀⠀
+⠀⢈⠱⢌⢺⡜⠣⢍⡛⢭⠛⡽⢫⠟⡻⢾⡹⠶⢯⠟⡾⡹⢏⠿⣳⣏⠋⡜⠠⢎⢢⠀⠀⠀⠀⠀⠀
+⠀⡈⡜⣌⢳⣎⠑⠦⠘⣀⣣⢄⣣⣌⣑⢂⠡⣉⢂⡉⡐⣁⠊⡔⢣⢿⡡⢌⠱⡈⢼⠀⠀⠀⠀⠀⠀
+⠀⠓⠴⡨⣿⡀⠀⠀⠀⠀⠁⣿⣿⣿⣿⡎⠁⠀⠀⠀⠁⠀⠀⠀⠈⣻⡆⢌⠢⡑⢼⡆⠀⠀⠀⠀⠀
+⠀⡘⡔⣣⡟⠇⠀⠀⠀⠀⠀⢾⣿⣿⣯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⣯⢀⠣⡘⢸⡇⠀⠀⠀⠀⠀
+⢀⡴⢨⡱⣟⠀⠀⠀⠀⠀⠀⣿⡿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣳⠌⢢⢁⢻⣿⠀⠀⠀⠀⠀
+⠈⡑⢦⢹⡆⠀⠀⠀⠀⠀⠀⠷⣙⢾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣻⠄⠣⢌⢺⣿⡀⠀⠀⠀⠀
+⠀⡘⡔⣻⡀⠀⠀⠀⠀⠀⠀⢸⢡⢾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⡎⡑⠢⢜⣻⡃⠀⠀⠀⠀
+⢰⢠⢏⡏⠀⠀⠀⠀⠀⠀⠀⢈⠖⣻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⡇⢌⡱⢸⣳⢧⠀⠀⠀⠀
+⠀⡳⢪⠟⠀⠀⠀⠀⠀⠀⠀⠊⠼⠍⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⡄⢢⢹⣎⣯⠀⠀⠀⠀
+⠀⢇⡿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢹⡄⠣⠜⠂⠈⠀⠀⠀⠀
+⣧⢎⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⡄⡙⣜⠀⠀⠀⠀⠀⠀
+⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⡇⣖⡸⠀⠀⠀⠀⠀⠀
+"""
+    print("You choose to go for a walk in the park today...",random.choice(kaomoji_happy))
+    print("˚˖𓍢ִ໋🍃✧˚.💚⋆...")
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("Feeling low and sad, you decide to go far a walk in the park today. You hope the fresh air might calm your mind...")
+    print("Just then, your phone suddenly light up. A notification pops up, showing a nearby park called 'Sunway park'.")
+    print("You don't know why but the sense of loss fills your heart, so you decide to go...")
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("The park is quiet, with only the sound of leaves rustling and birds calling in the diatance.")
+    print("You're feeling too sad because you miss your family more tha usual.")
+    print("As you walk along the path, you notice that a man dressed entirely in black and sitting alone on a bench.")
+    print("You hesitate for a moment, then sit down beside him...")
+    print(ascii_art_chair)
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("The man turns to you and ask, 'Why do you look so sad?'")
+    print("You take a deep breath and answer him, 'I am trap in this world, I really miss my family.'")
+    print("You don't tell the truth...")
+    print("He looks deeply into your eyes and says to you, 'My name is Marcus.'")
+    print("I left my family many years ago to work in another city. At first, I told myself it was only temporary. I wanted to give them a better life, but days turned into years.")
+    print("He paused and looking down at the floor.")
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("As time slowly passes, I suddenly realize what i have lost.")
+    print("You listen quietly and seriously")
+    print("'That's why i come this park every evening...'Marcus continue saying.")
+    print("This park reminds me time are still moving, whether we are ready or not.")
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("Two of you sit in silence,talking about the life, regret moment, hope, and the people you love and take care about.")
+    print("Without realizing, you both welcome the sunset of the day together.")
+    print("You stand up with the sunset at your back.")
+    print("'It was nice meeting you, I should go now', you says.")
+    print("He smiles and says, 'Take care. Don't make the people you love and the people who love you, wait too long.'")
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("You walk away, feeling better than before.")
+    print("When you suddenly turn back, the bench is empty but the warmth stays in your heart...")
+    print("'What a warm person he is ,' you think to yourself.")
+    print(f"{color_green}The End{color_reset}")
+    print()
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+    print()
+    print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+#End for today
+print(f"{color_pink}~"*125,f"{color_reset}")
+
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 12:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#Day 12 End
+#Day 13 Start
+print("Day 13...")
+print("7 Days left")
+print("-"*100)
+print("Today is the thirteenth day of your SPM exam preparation journey")
+print(f"Your main mission for today is study {color_blue}Mathematics{color_reset}!")
+print(f"{color_green}(⚠️ Caution: This subject is crucial part in your SPM exam!){color_reset}")
+print("Keep moving forward, never give up!!!", random.choice(kaomoji_happy))
+print()
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}WATCH ANIME ?{color_reset}",random.choice(emoji_rest))
+print("STUDY or WATCH ANIME")
+choice=str(input("Please enter your choice:")).upper()
+#check validity 
+while choice!="STUDY" and choice!="WATCH ANIME":
+    print("⚠️",f"{color_yellow}Invalid choice! Please enter STUDY or WATCH ANIME.{color_reset}")
+    choice=str(input("Please enter your choice:")).upper()
+print("-"*100)
+#taskbar end
+
+#start loop
+if choice=="STUDY":
+    sp+=5
+    print("Nice! Knowledge battle begins!!!",random.choice(emoji_happy))
+
+    questions=[
+        "1) Shakir invested RM8000 in Premium Unit Trusts and recieved a dividend of RM 300 at the end of the year. Then, he sold all the shares at a price of RM 8000. Calculate the return on investment (ROI) of Shakir.",
+        "2) Jasseem drove at a speed of 110km/h. He decreased his speed to 80km/h in 5 minutes. Calculate the deceleration in km/h per second.",
+        f"3) The probability that Lim answered a History quiz question correctly is 4/5. If the quiz has 50 questions, calculate the number of questions that Lim {color_red}did not{color_reset} answer correctly.",
+        "4) Lyssa owns a plot of land measuring 7.9m x 34.5m and intends to build a house for her mother. The house was complete in January 2024 and the state government has set a land tax rate in the area of RM 0.60 per square meter. Calculate the amount of land tax that Lyssa has to pay until December 2028.",
+        "5) If k is an integer, then the values of k that statisfy both the inequalities k+8>=3 and k+7<6 are"
+    ]
+
+    options=[
+        ["A. 10.00%","B. 12.50%","C. 13.75%","D. 27.27%"],
+        ["A. -6.0","B. -0.1","C. 0.1","D. 6.0"],
+        ["A. 40","B. 30","C. 20","D. 10"],
+        ["A. 163.53","B. 272.55","C. 654.12","D. 817.65"],
+        ["A. -4, -3, -2","B. -5, -4, -3, -2, -1","C. -4, -3, -2, -1","D. -5, -4, -3, -2"],
+    ]
+
+    answers=[
+        "C","C","D","D","D"
+    ]
+
+    #initial score and question_number
+    score=0
+    question_number=0
+    for queation_number in range (len(questions)):
+        print("-"*100)
+        print()
+        print(questions[question_number])
+        for option in options[question_number]:
+            print(option)
+        print()
+
+        answer_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        while answer_input not in ['A','B','C','D']:
+            print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+            answer_input=str(input("Please enter your answer(A/B/C/D): ")).upper()
+        
+        if answer_input==answers[question_number]:
+            print()
+            print(random.choice(emoji_correct),"Correct Answers!")
+            print(f"{color_green}Well played!!{color_reset}",random.choice(kaomoji_fighting))
+            score=score+1
+        
+        else:
+            sl+=2
+            print()
+            print(random.choice(emoji_wrong),"Wrong Answers!")
+            print(f"{color_yellow}Oops! Try again.{color_reset}",random.choice(kaomoji_fighting))
+        
+        print()
+        print("Your current score is :", score,"out of",len(questions),random.choice(emoji_happy))
+        print()
+        print("Well done! Your understanding is getting stronger with every question.",random.choice(kaomoji_fighting))
+        print()
+        input(f"{color_red}Press Enter to continue...{color_reset}")
+    question_number=question_number+1
+    print()
+    print(random.choice(emoji_fighting),f"{color_pink}Quiz Ended!!!{color_reset}")
+    print("Your final score is:", score,"out of", len(questions), random.choice(emoji_happy))
+
+#for the second choice
+else:
+    sl-=5
+    ascii_art_anime="""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣧⡀⠀⠀⠀⢀⣶⠀⠀⢀⠄⣼⣿⣧⠀⠀⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣦⡀⢀⣼⡿⠀⣀⣾⣾⣿⣿⣿⠀⠀⣠⣾⣿⡄⠀⠀⣠⣴⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣷⡀⠀⣤⣀⠀⠀⣿⣿⣶⠸⣿⣿⣿⣧⣴⡿⠟⡐⣿⣿⡏⠠⢊⣿⣿⡿⠁⣰⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⡀⢹⣿⣿⣦⣿⣿⢿⣷⣬⠙⣿⣿⣿⣶⣶⣶⣿⡿⠠⢀⣾⣿⢁⣶⣸⣿⣿⣤⡤⢤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⢸⣿⣿⣿⣄⣿⣿⡇⣿⣿⡎⣿⣿⣇⣸⣿⣿⡿⣿⣿⣿⣶⣶⣿⡿⢃⣾⣿⣿⣿⣿⣿⣿⡿⠛⢀⣠⣴⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠀⠀⣿⣿⣿⣿⢿⣿⣇⠹⣿⣿⣽⣾⣿⣿⣿⣿⡆⣿⣿⣿⣿⣿⡏⣰⣿⣿⡿⢿⣿⣿⣿⣯⣶⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⢸⣆⠀⣈⣿⣿⣿⡇⢻⣿⣿⣿⡟⢻⣿⣯⠨⣿⣿⠁⣿⣿⣿⣿⣿⣿⠿⠋⣡⣶⣟⣩⣿⣟⣿⠿⢿⣿⣿⣁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣦⡈⣿⣷⡿⣿⣯⡙⠿⡌⢻⣿⣿⣷⡌⢿⣿⣬⣿⡿⠀⡿⠋⡹⠟⠋⠁⠀⢠⣿⣿⣿⣿⡍⠟⣭⣼⣶⣼⣿⣿⣿⣶⣶⣶⡶⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢛⡉⢀⠘⡍⣿⣿⣷⣾⣿⣾⡛⠿⠷⠌⠻⠿⠟⠁⣀⡴⢀⣀⣀⠀⠼⠶⠿⠟⠛⠋⢉⣀⣴⠿⠿⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⣷⣶⣶⣶⣾⠛⣿⣿⣦⣟⠛⠿⢿⣿⠿⠏⠋⣩⣤⣤⣴⠒⣾⡗⠸⣿⡟⢻⣿⣿⣿⣿⣿⣿⣿⣷⡄⡈⢃⣠⣶⣿⠿⣿⣿⣿⣔⣊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠘⠿⣿⣿⣧⣄⣉⣽⣿⣿⣿⣦⣈⠁⣠⣿⣿⣿⣿⣿⡟⢰⡿⠇⠀⣿⠙⡆⠹⣿⣿⣿⣿⣿⣿⣿⣷⣦⣈⠻⣿⣿⣇⠜⢿⣿⡙⠿⠿⠶⠄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢄⡐⣺⣿⣯⣙⡛⠛⠚⣛⣋⣭⠋⣰⣿⣿⣿⣿⣿⣿⠇⠘⠇⢀⣤⡏⠀⣁⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡗⠀⢸⣿⣜⠘⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⣉⣿⣿⡿⣿⣿⠟⢁⣾⣿⣿⣿⣿⣿⣿⣿⠂⢠⣶⠀⣿⡇⢰⣿⣿⣦⣽⠿⠿⠛⠛⣉⣹⣿⣿⣿⡆⠘⢿⡛⠿⣿⣿⡿⠷⠄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⡀⣀⣀⣀⣤⣴⣾⡿⢉⣤⣶⡿⠋⠀⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿⢸⣿⡿⠋⣀⣴⠻⠛⣛⣛⣿⣿⣿⣿⣿⡄⠀⠈⠑⠈⠙⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⢿⣿⣿⣿⣿⠟⣿⣿⣿⡟⠉⠄⠀⣸⣿⣿⣿⣯⣥⣶⣶⣶⣤⣄⢉⠛⢿⣿⣿⣿⣿⠀⡶⠋⣠⠶⠚⠛⣉⣉⣉⡉⢿⣿⡆⠀⠀⠈⠙⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠻⠿⠿⠋⣴⣿⠿⠋⡀⢀⡔⢀⣿⣿⣿⣿⣿⡟⠉⠁⠤⠤⠤⠀⠀⠄⠹⣿⣿⣿⣄⣀⣎⢀⣴⠇⠈⠛⢿⣿⠟⠸⣿⣧⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢴⡾⠛⠁⠀⣨⡷⠋⠀⠈⣿⣿⡿⢉⣥⣶⣶⡿⠛⠻⣦⡐⢷⣤⡦⠙⠿⢿⣿⣿⣿⡘⠛⠆⠀⠠⠿⠋⠐⢰⠉⢉⣿⠀⢀⣴⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠹⠇⠀⠀⠀⢿⣿⡷⢄⠻⣿⣿⣄⠁⡀⠿⢓⣾⠏⠀⠀⣀⣀⠈⠙⠻⠿⠿⢿⣿⣿⣿⠖⠈⠁⠀⢘⣿⠀⡟⢡⠌⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠋⡙⢦⠀⠈⠙⣁⣥⣴⣾⠿⠃⢀⣴⣶⣿⣿⣷⣶⣶⣶⣾⣿⣿⣿⣿⣏⣄⢀⡀⠈⡋⡞⠠⡌⢲⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡿⣷⣄⠸⠇⠈⢀⠠⣉⣹⣿⣿⣿⣷⣶⣶⣿⣿⢿⣿⣿⡟⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⡏⡷⠀⠀⣾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣀⣤⠙⢷⠄⠀⢠⣤⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠈⢟⣁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢀⡇⠃⢀⣼⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣇⠀⠸⣶⣄⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⠿⠿⠿⠿⠏⠙⢿⣿⣿⠁⠘⢁⣴⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣆⡀⠘⠻⣦⠀⢻⣿⣿⣿⣿⣿⣿⣿⠿⠛⣋⣩⣥⣤⣴⠶⠿⠿⠿⠛⠛⢠⣾⣿⡏⠀⡀⠘⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣶⣶⡈⠃⠀⢹⣿⣿⡟⠉⣩⡔⠶⠿⠛⠉⠉⠀⠐⠀⢀⣠⠖⣃⣴⣿⣿⣿⠁⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠋⠀⢇⠀⠻⣿⣷⣦⣌⣉⣛⣲⣲⣶⣾⣿⣛⣛⠩⢰⣿⣿⣿⣿⡟⠁⢀⠌⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⢆⠀⠈⠻⣿⣿⣿⣿⣿⣿⣭⣭⣭⣤⣤⣶⣿⡿⠿⠿⠋⠀⡴⠁⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⣄⡙⢦⡀⠈⠻⠿⣿⠟⠉⠛⠻⢿⣿⣿⠋⡀⠀⣀⣀⣠⠊⣠⠎⣰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣦⣌⠒⠤⣀⣀⣤⣤⠈⠂⢹⣿⡿⠐⢃⣼⣿⠟⢁⣼⠋⣼⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣶⣤⣙⠛⠿⣷⣄⣤⣿⣿⣿⣿⠟⢁⣴⠿⠋⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠿⠻⣿⣿⣿⣿⣿⣶⣤⣬⣭⣭⣭⣭⣤⣾⠟⢡⡆⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⢡⡄⠆⣿⣿⣿⣿⣿⣏⢻⣿⣿⣿⣿⣿⡟⢁⣶⣿⡇⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣧⢀⠘⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠋⣰⣿⣿⣿⠇⢰⣿⣿⡇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡄⢸⣿⣿⡆⠂⢿⣿⣿⣿⣿⣷⡌⠙⠿⢁⣼⣿⣿⣿⣿⠀⣼⣿⣿⡇⣿⣷⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠾⠿⠇⢸⣿⣿⣷⡀⠸⣿⣿⣿⣿⣿⣿⣇⡀⣾⣿⣿⣿⣿⣿⠀⣿⣿⣿⡇⢸⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣶⣶⣄⠀⣿⣿⣿⣧⠀⢹⡇⢤⣌⠛⢿⣿⣇⢸⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⢻⣿⣿⣿⡄⠸⡇⢸⣿⣿⣦⣄⣁⣼⣿⣿⣿⣿⡏⢸⣿⣿⣿⡘⣿⣿⣿⣿⣿⣿⣧⡀⣀⣀⣀⣀⣸⣷⣤⣀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡞⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⡿⢸⣿⣿⣿⣿⡄⢙⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⣾⣿⣿⣿⡇⠹⣿⣿⣿⣿⣿⣿⣧⠛⠛⠛⠛⠛⠻⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⣀⣤⣶⣿⣿⣁⣠⣤⣶⣶⣿⣿⣿⣿⣿⣿⡟⠀⣿⣿⣿⣿⣿⣿⡆⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⡟⢸⣿⣿⣿⣿⡇⠀⠙⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⢿⣿⣿
+⣀⣤⣴⣿⣿⣿⠿⠛⣿⣿⠟⠛⠛⠉⠉⠀⣸⣿⣿⣿⣿⠏⠀⠀⣿⣿⣿⣿⣿⣿⣿⡄⠀⣿⣿⣿⣿⣿⣿⣿⣿⠁⣾⣿⣿⣿⣿⡇⡀⣧⣈⠻⠿⠿⠿⠿⠗⠀⢀⣀⣠⣤⠤⠿⣿
+⣿⣿⣿⣿⣿⣁⠐⠻⢿⡟⠀⠀⠀⠀⠀⢠⣿⣿⣿⠟⢁⠀⣰⠀⣿⣿⣿⣿⣿⣿⣿⣿⡀⠈⢿⣿⣿⣿⣿⣿⡟⣸⣿⠿⠿⠛⠛⣁⣡⣬⣵⣶⣶⣶⣶⣿⣿⣿⡈⠉⠀⠀⠀⠀⢹
+⣿⣿⣿⣿⣿⣿⣿⣿⣶⡶⠦⠤⣄⣀⣀⣘⣛⣋⡀⠐⠀⣼⣿⠀⠿⠿⠿⠿⣿⣿⣿⣿⣿⡄⠈⠙⠿⣿⡿⠋⠀⢫⣴⣾⣿⣿⣿⣿⣿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀
+"""
+    print("You choose to go to the music festival today~ Enjoy your time~",random.choice(kaomoji_happy))
+    print(ascii_art_music)
+    print()
+    print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+
+print(f"{color_pink}~"*125,f"{color_reset}")
+
+input()
+print(f"""{Fore.BLUE}
+      
+┌──────────────────────────┐
+│  DAY 13:                  │
+│                          |
+│  STUDY PROGRESS:{sp}     
+│  STRESS LEVEL: {sl}      
+│  MOOD STATE: {mood_state(ms)}      
+│                          │
+│  GOOD LUCK WITH YOUR     │
+│  JOURNEY!                │
+└──────────────────────────┘
+
+""")
+input()
+#day 13 end
