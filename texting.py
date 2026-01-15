@@ -3,6 +3,7 @@
 import colorama
 from colorama import Fore
 import random
+import sys
 
 #------------------------------------------------------------------------------------------------------
 #setting all  marks for subjects
