@@ -26,12 +26,12 @@ import termcolor
 import pyfiglet
 import colorama
 from colorama import Fore,Back  #(by rc)
+import sys 
 
 colorama.init(autoreset=True)
 from SpmSurvivalSimulator import menu
 
-
-
+menu()
 
 name=str(input("Enter your name: "))
 while name=="" or name==" ":
@@ -1320,6 +1320,7 @@ input()
 #Day9 Start
 
 #Start Day 9
+
 print("Day 9...")
 print("11 Days left")
 print("-"*100)
@@ -1345,20 +1346,20 @@ if choice=="STUDY":
 
     #use for loop to ask 5 question
     questions=[
-        "1) Apakah tugas Temenggung dalam Kerajaan Kesultanan Melayu Melaka?" ,
+        "1) Apakah tugas Temenggung dalam Kerajaan Kesultanan Melayu Melak?" ,
         "2) Bagaimanakah golongan kelas pertengahan berpendidikan Barat menentang Britiah di Burma?",
-        "3) Perang Dunia Pertama berlaku pada tahun 1914 hingga 1918." 
-        "Apakah faktor yang mencetuskan perang tersebut?"
+        """3) Perang Dunia Pertama berlaku pada tahun 1914 hingga 1918.
+Apakah faktor yang mencetuskan perang tersebut?""",
         "4) Bagaimanakah Perjanjian Persekutuan Tanah Melayu 1948 membela nasib penduduk asal di Tanah Melayu",
         "5) Bagaimanakah Britiah menumpaskan kegiatan Min Yuen?"
     ]
 
     options=[
-        ["A. Menjatuhkan hukuman mati","B. Mengetuai rombongan diplomatik","C. Mengawai keamanan dqalam negeri","D. Melicinkan kutipan cukai di pelabuhan","","Hint: Tingkatan 4 M/s 9"],
-        ["A. Membentuk Katipunan","B. Menubuhkan Persatuan Belia Buddha","C. Menerbitkan akhbar Tribune Indige","D. Melancarkan pemberontakan Saya San","","Hint: Tingkatan 4 M/s 29"],
-        ["A. Pengeboman Pearl Harbour","B. Perbezaan ideologi antara negara","C. Persengketaan Rusia dengan Britian","D. Pembunuhan pewaris takhta Austria-hungary","","Hint: Tingkatan 4 m/s 54"],
-        ["A. Melindungi hak peribumi","B. Memonopoli pentadbiran negara","C. Memansuhkan kerakyatan imigran","D. Membentuk parti politik mengikut kaum","","Hint: Tingkatan 4 m/s 127"],
-        ["A. Memeterai perjanjian damai","B. Membuka penempatan baru","C. Melancarkan serangan gerila","D. Menangkap pemimpin radikal","","Hint: Tingkatan 4 m/s 157"],
+        ["A. Menjatuhkan hukuman mati","B. Mengetuai rombongan diplomatik","C. Mengawai keamanan dqalam negeri","D. Melicinkan kutipan cukai di pelabuhan","",f"{color_skyblue}Hint: Tingkatan 4 M/s 9{color_reset}"],
+        ["A. Membentuk Katipunan","B. Menubuhkan Persatuan Belia Buddha","C. Menerbitkan akhbar Tribune Indige","D. Melancarkan pemberontakan Saya San","",f"{color_skyblue}Hint: Tingkatan 4 M/s 29{color_reset}"],
+        ["A. Pengeboman Pearl Harbour","B. Perbezaan ideologi antara negara","C. Persengketaan Rusia dengan Britian","D. Pembunuhan pewaris takhta Austria-hungary","",f"{color_skyblue}Hint: Tingkatan 4 m/s 54{color_reset}"],
+        ["A. Melindungi hak peribumi","B. Memonopoli pentadbiran negara","C. Memansuhkan kerakyatan imigran","D. Membentuk parti politik mengikut kaum","",f"{color_skyblue}Hint: Tingkatan 4 m/s 127{color_reset}"],
+        ["A. Memeterai perjanjian damai","B. Membuka penempatan baru","C. Melancarkan serangan gerila","D. Menangkap pemimpin radikal","",f"{color_skyblue}Hint: Tingkatan 4 m/s 157{color_reset}"],
     ]
 
     answers=[
@@ -1409,7 +1410,7 @@ if choice=="STUDY":
 #if user choose the other choice
 else:
     sl-=5
-    ascii_art_animefeast=f"""{Fore.LIGHTGREEN_EX}
+    ascii_art_animefeast=f"""{Fore.BLUE}
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠟⠋⠉⠉⠉⠉⠛⢿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -1436,8 +1437,7 @@ else:
 ⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀
 ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀
 ⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀
-⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀
-⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀
+
 
 
 """
@@ -1446,6 +1446,7 @@ else:
     print()
     print("See you tomorrow for more studying!", random.choice(emoji_happy))
     input(f"{color_red}Press Enter to continue...{color_reset}")
+#End for the ninth day
 print(f"{color_pink}~"*125,f"{color_reset}")
 input()
 print(f"""{Fore.BLUE}
@@ -1474,7 +1475,7 @@ print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
 print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
 print("Fast and focused---that's how winner do it!!", random.choice(kaomoji_happy))
 print()
-print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}go to the MUSIC FESTIVAL?{color_reset}",random.choice(emoji_rest))
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}go to the MUSIC FESTIVAL{color_reset}",random.choice(emoji_rest),"today?")
 print("STUDY or MUSIC FESTIVAL")
 choice=str(input("Please enter your choice:")).upper()
 #check validity 
@@ -1490,22 +1491,21 @@ if choice=="STUDY":
     print("Great! Is is time to level up your brain!!",random.choice(emoji_happy))
 
     questions=[
-        "1) Apakah ciri negara berdaulat?"
-        ""
-        "I Pentadbiran yang sistematik"
-        "II Sempadan yang jelas"
-        "III Rakyat berbilang kaum"
-        "IV Naungan kerajaan lain",
+        """1) Apakah ciri negara berdaulat?
+      
+I Pentadbiran yang sistematik
+II Sempadan yang jelas
+III Rakyat berbilang kaum
+IV Naungan kerajaan lain
+""", 
+#triple " is to create multiple line string and allowing the texxt written on several line without the \n 
         "2) Mengapakah konsep pengasingan kuasa penting dalam amalan demokrasi berparlimen",
-        "3) Kerajaan Persekutuan dan Kerajaan Negeri berusaha untuk membolehkan golongan pertengahan memiliki rumah kediaman."
-        ""
-        "Bagaimanakah kedua-dua kerajaan mencapai matlamat tersebut?",
-        "4) Pada tahun1962, satu referendum telah diadakan di Singapura."
-        ""
-        "Mengapakah referendum tersebut diadakan?",
-        "5) Dasar Kebudayaan Kebangsaan telah digubal pada tahun1971."
-        ""
-        "Mengapakah dasar tersebut diperkenalkan?",
+        """3) Kerajaan Persekutuan dan Kerajaan Negeri berusaha untuk membolehkan golongan pertengahan memiliki rumah kediaman.
+Bagaimanakah kedua-dua kerajaan mencapai matlamat tersebut?""",
+        """4) Pada tahun1962, satu referendum telah diadakan di Singapura.
+Mengapakah referendum tersebut diadakan?""",
+        """5) Dasar Kebudayaan Kebangsaan telah digubal pada tahun1971.
+Mengapakah dasar tersebut diperkenalkan?""",
     ]
 
     options=[
@@ -1523,7 +1523,7 @@ if choice=="STUDY":
     #initial score and question_number
     score=0
     question_number=0
-    for queation_number in range (len(questions)):
+    for question_number in range (len(questions)):
         print("-"*100)
         print()
         print(questions[question_number])
@@ -1562,7 +1562,7 @@ if choice=="STUDY":
 #for the second choice
 else:
     sl-=5
-    ascii_art_music="""{Fore.MAGENTA}
+    ascii_art_music=f"""{Fore.MAGENTA}
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢿⡀⠀⠀⠀⠀⣤⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⣤⣀⣸⠏⠘⣧⠀⠀⠀⠀⠁⠀⠀⠀⠀
@@ -1593,7 +1593,9 @@ else:
     print()
     print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
     input(f"{color_red}Press Enter to continue...{color_reset}")
+#End for today
 print(f"{color_pink}~"*125,f"{color_reset}")
+
 input()
 print(f"""{Fore.BLUE}
       
@@ -1613,6 +1615,7 @@ input()
 #Day 10 End 
 #Day 11 Start
 
+
 print("Day 11...")
 print("9 Days left")
 print("-"*100)
@@ -1621,7 +1624,7 @@ print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
 print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
 print("Saty sharp, saty confident!!!", random.choice(kaomoji_happy))
 print()
-print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}go to the FOOD FESTIVAL?{color_reset}",random.choice(emoji_rest))
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}go to the FOOD FESTIVAL{color_reset}",random.choice(emoji_rest),"today?")
 print("STUDY or FOOD FESTIVAL")
 choice=str(input("Please enter your choice:")).upper()
 #check validity 
@@ -1638,27 +1641,24 @@ if choice=="STUDY":
 
     questions=[
         "1) Bagaimanakah Dasr Ekonomi Baru (DEB) dapat memberi keadilan kepada semua kaum?",
-        "2) Dasar pembangunan Nasional (DPN) bermatlamat untuk mencapai perpaduan melalui pengagihan kekayaan negara."
-        ""
-        "Bagaimanakah hasrat tersebut dapat dicapai?",
-        "3) Setelah mencapai kemerdekaan, Mlaysia telah menjadi anggota Pertubuhan Bangsa-Bangsa Bersatu (PBB)."
-        ""
-        "Mengapakah Malaysia menganggotai pertubuhan tersebut?",
-        "4) Malaysia menjadikan ASEAN sebagai platform mengisytiharkan perubahan dasar luar negara pada peringkat serantau dan global."
-        ""
-        "Bagaimanakah Malaysia merealisasikan komitmen tersebut?",
-        "5) Komuniti ASEAN ditubuhkan pada tahun 2015 melalui Deklaras Kuala Lumpur sewaktu Sidang Kemuncak ASEAN ke-27."
-        ""
-        "Apakah matlamat penubuhan komuniti tersebut?"
-        ""
-        "I Menjana pertumbuhan ekonomi"
-        "II Meningkatkan kemahiran tenaga kerja"
-        "III Menetapkan nilai mata wang tunggal"
-        "IV Menjamin keselamatan serantau",
+        """2) Dasar pembangunan Nasional (DPN) bermatlamat untuk mencapai perpaduan melalui pengagihan kekayaan negara.
+Bagaimanakah hasrat tersebut dapat dicapai?""",
+        """3) Setelah mencapai kemerdekaan, Mlaysia telah menjadi anggota Pertubuhan Bangsa-Bangsa Bersatu (PBB).
+Mengapakah Malaysia menganggotai pertubuhan tersebut?""",
+        """4) Malaysia menjadikan ASEAN sebagai platform mengisytiharkan perubahan dasar luar negara pada peringkat serantau dan global.
+Bagaimanakah Malaysia merealisasikan komitmen tersebut?""",
+        """5) Komuniti ASEAN ditubuhkan pada tahun 2015 melalui Deklaras Kuala Lumpur sewaktu Sidang Kemuncak ASEAN ke-27.
+Apakah matlamat penubuhan komuniti tersebut?
+
+I Menjana pertumbuhan ekonomi
+II Meningkatkan kemahiran tenaga kerja
+III Menetapkan nilai mata wang tunggal
+IV Menjamin keselamatan serantau
+""",
     ]
 
     options=[
-        ["A. Membasmi buta huruf","B. Meningkatkan infrastruktur","C. Menyusun semula masyarakat","Menambah jumlah penduduk","",f"{color_skyblue}Hint: Tingkatan 5 m/s 167{color_reset}"],
+        ["A. Membasmi buta huruf","B. Meningkatkan infrastruktur","C. Menyusun semula masyarakat","D. Menambah jumlah penduduk","",f"{color_skyblue}Hint: Tingkatan 5 m/s 167{color_reset}"],
         ["A. Melaksanakan ekonomi kawalan","B. Memantau pengurusan kewangan negara","C. Mengimbangi pembangunan antara negeri","D. Mengawal peningkatan golongan pertengahan","",f"{color_skyblue}Hint: Tingkatan 5 m/s 174{color_reset}"],
         ["A. Menamatkan ancaman luar","B. Memelihara kedaulatan negara","C. Mendapatkan bantuan ketenteraan","D. Menyertai perdagangan antarabangsa","",f"{color_skyblue}Hint: Tingkatan 5 m/s 198{color_reset}"],
         ["A. Mengadakan perjanjian Pertahanan Lima Negara (FPDA)","B. Menandatangani Prejanjian Umum Tarif dan Perdagangan (GATT)","C. Membina Pusat Serantau untuk Sains da Matematiik (RECSAM)","D. Mengumumkan Deklarasi Zon Aman, Bebas dan Berkecuali(ZOPFAN)","",f"{color_skyblue}Hint: Tingkatan 5 m/s 210{color_reset}"],
@@ -1672,7 +1672,7 @@ if choice=="STUDY":
     #initial score and question_number
     score=0
     question_number=0
-    for queation_number in range (len(questions)):
+    for question_number in range (len(questions)):
         print("-"*100)
         print()
         print(questions[question_number])
@@ -1711,7 +1711,7 @@ if choice=="STUDY":
 #for the second choice
 else:
     sl-=5
-    ascii_art_food="""{fore.YELLOW}
+    ascii_art_food=f"""{Fore.YELLOW}
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⠖⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⣰⠟⠁⣀⣀⠀⠈⠻⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠞⡡⠊⡡⢖⡦⠀⢸⡇⠀⡞⠀⠈⢱⠀⠀⢹⡆⠀⠀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -1748,7 +1748,9 @@ else:
     print()
     print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
     input(f"{color_red}Press Enter to continue...{color_reset}")
+#End for today
 print(f"{color_pink}~"*125,f"{color_reset}")
+
 input()
 print(f"""{Fore.BLUE}
       
@@ -1767,7 +1769,6 @@ print(f"""{Fore.BLUE}
 input()
 #Day 11 End
 #Day 12 start
-
 print("Day 12...")
 print("8 Days left")
 print("-"*100)
@@ -1777,7 +1778,7 @@ print(f"{color_green}(⚠️ Remember: This subject is very important in your SP
 print("Slow progress is still progress!! Keep answering, keep learning!!!", random.choice(kaomoji_happy))
 print()
 print("Today your mission is do a revision for SEJARAH but you're very sad today because you sudden miss your family...")
-print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}WALK AROUND THE PARK? (System suggest)(You may meet a person that help you to cheer up){color_reset}",random.choice(emoji_rest))
+print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}WALK AROUND THE PARK (System suggest)(You may meet a person that help you to cheer up){color_reset}",random.choice(emoji_rest),"today?")
 print("STUDY or WALK AROUND THE PARK")
 choice=str(input("Please enter your choice:")).upper()
 #check validity 
@@ -1796,14 +1797,13 @@ if choice=="STUDY":
         "1) Apakah syarat untuk menjadi pengundi dalam Pilihan Raya Umum Pertama di Tanah Melayu?",
         "2) Mengapakah Tunku Abdul Rahman dan rombongan kemerdekaan menggunakan kapal laut dari Singapura ke Keranchi pada 1 januari 1956?",
         "3) Kedaulatan tradisional merujuk kepada",
-        "4) Rancangan Integrasi Murid untuk Perpaduan (RIMUP) telah dilaksanakan di peringkat sekolah"
-        ""
-        "Apakah tujuan dasar tersebut?",
+        """4) Rancangan Integrasi Murid untuk Perpaduan (RIMUP) telah dilaksanakan di peringkat sekolah
+Apakah tujuan dasar tersebut?""",
         "5) Apakah strategi yang digunakan dalam melaksanakan Dasar Ekonomi Baru?",
     ]
 
     options=[
-        ["A. Berpengetahuan bahasa inggeris","Mampu berbahasa Melayu","C. Merupakan warganegara","D. Berumur 18 tahun ke atas","",f"{color_skyblue}Hint: Tingkatan 4 m/s 200{color_reset}"],
+        ["A. Berpengetahuan bahasa inggeris","B. Mampu berbahasa Melayu","C. Merupakan warganegara","D. Berumur 18 tahun ke atas","",f"{color_skyblue}Hint: Tingkatan 4 m/s 200{color_reset}"],
         ["A. Menjimatkan kos perjalanan","B. Mengadakan perbincangan","C. Menjelaskan misi rundingan","D. Mendapatkan sokongan luar","",f"{color_skyblue}Hint: Tingkatan 4 m/s 217{color_reset}"],
         ["A. Pematuhan terhadap perundangan","B. Pemerintahan berkuasa mutlak","C. Pengiktirafan peringkat dunia","D. Persamaan rumun bangsa","",f"{color_skyblue}Hint: Tingkatan 5 m/s 6{color_reset}"],
         ["A. Mewujudkan minat dalam pelajaran","B. Melahirkan generasi yang kreatif","C. Memupuk semangat setia kawan","D. Menonjolkan identiti kebangsaan","",f"{color_skyblue}Hint: Tingkatan 5 m/s 152{color_reset}"],
@@ -1817,7 +1817,7 @@ if choice=="STUDY":
     #initial score and question_number
     score=0
     question_number=0
-    for queation_number in range (len(questions)):
+    for question_number in range (len(questions)):
         print("-"*100)
         print()
         print(questions[question_number])
@@ -1885,11 +1885,13 @@ else:
 """
     print("You choose to go for a walk in the park today...",random.choice(kaomoji_happy))
     print("˚˖𓍢ִ໋🍃✧˚.💚⋆...")
+    print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
     print()
     print("Feeling low and sad, you decide to go far a walk in the park today. You hope the fresh air might calm your mind...")
     print("Just then, your phone suddenly light up. A notification pops up, showing a nearby park called 'Sunway park'.")
     print("You don't know why but the sense of loss fills your heart, so you decide to go...")
+    print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
     print()
     print("The park is quiet, with only the sound of leaves rustling and birds calling in the diatance.")
@@ -1897,6 +1899,7 @@ else:
     print("As you walk along the path, you notice that a man dressed entirely in black and sitting alone on a bench.")
     print("You hesitate for a moment, then sit down beside him...")
     print(ascii_art_chair)
+    print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
     print()
     print("The man turns to you and ask, 'Why do you look so sad?'")
@@ -1905,12 +1908,14 @@ else:
     print("He looks deeply into your eyes and says to you, 'My name is Marcus.'")
     print("I left my family many years ago to work in another city. At first, I told myself it was only temporary. I wanted to give them a better life, but days turned into years.")
     print("He paused and looking down at the floor.")
+    print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
     print()
     print("As time slowly passes, I suddenly realize what i have lost.")
     print("You listen quietly and seriously")
     print("'That's why i come this park every evening...'Marcus continue saying.")
     print("This park reminds me time are still moving, whether we are ready or not.")
+    print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
     print()
     print("Two of you sit in silence,talking about the life, regret moment, hope, and the people you love and take care about.")
@@ -1918,11 +1923,13 @@ else:
     print("You stand up with the sunset at your back.")
     print("'It was nice meeting you, I should go now', you says.")
     print("He smiles and says, 'Take care. Don't make the people you love and the people who love you, wait too long.'")
+    print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
     print()
     print("You walk away, feeling better than before.")
     print("When you suddenly turn back, the bench is empty but the warmth stays in your heart...")
     print("'What a warm person he is ,' you think to yourself.")
+    print()
     print(f"{color_green}The End{color_reset}")
     print()
     input(f"{color_red}Press Enter to continue...{color_reset}")
@@ -1936,7 +1943,7 @@ input()
 print(f"""{Fore.BLUE}
       
 ┌──────────────────────────┐
-│  DAY 12:                  │
+│  DAY 12:                 │
 │                          |
 │  STUDY PROGRESS:{sp}     
 │  STRESS LEVEL: {sl}      
@@ -2035,7 +2042,7 @@ if choice=="STUDY":
 #for the second choice
 else:
     sl-=5
-    ascii_art_anime="""
+    ascii_art_anime=f"""{Fore.RED}
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣧⡀⠀⠀⠀⢀⣶⠀⠀⢀⠄⣼⣿⣧⠀⠀⠀⠀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣦⡀⢀⣼⡿⠀⣀⣾⣾⣿⣿⣿⠀⠀⣠⣾⣿⡄⠀⠀⣠⣴⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -2091,7 +2098,7 @@ input()
 print(f"""{Fore.BLUE}
       
 ┌──────────────────────────┐
-│  DAY 13:                  │
+│  DAY 13:                 │
 │                          |
 │  STUDY PROGRESS:{sp}     
 │  STRESS LEVEL: {sl}      
@@ -2664,7 +2671,7 @@ What is the action should be taken to treat the disease?"""
 #for the second choice
 else:
     sl-=5
-    ascii_art_arcade="""
+    ascii_art_arcade=f"""{Fore.CYAN}
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣶⣾⣿⣿⣿⣶⣂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣶⣿⣭⣿⣓⡶⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠿⠟⠓⠒⠒⠒⠶⠬⢍⣓⡒⠶⠤⠤⠤⠤⣄⣀⣀⣀⣀⣠⠤⠤⠤⠤⠶⢖⣛⡭⠥⠖⠒⠒⠒⠚⠻⢷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠟⢁⣠⠤⠶⠶⠦⢤⣄⠀⢤⣈⠉⠙⠛⠛⠓⠒⠒⠲⠲⠶⠖⠒⠒⠛⠛⠛⠉⠉⣀⡤⠀⣀⡤⠴⠶⠶⠤⣄⡈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
