@@ -28,6 +28,10 @@ import colorama
 from colorama import Fore,Back  #(by rc)
 
 colorama.init(autoreset=True)
+from SpmSurvivalSimulator import menu
+
+
+
 
 name=str(input("Enter your name: "))
 while name=="" or name==" ":
@@ -2076,7 +2080,7 @@ else:
 ⣿⣿⣿⣿⣿⣿⣿⣿⣶⡶⠦⠤⣄⣀⣀⣘⣛⣋⡀⠐⠀⣼⣿⠀⠿⠿⠿⠿⣿⣿⣿⣿⣿⡄⠈⠙⠿⣿⡿⠋⠀⢫⣴⣾⣿⣿⣿⣿⣿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀
 """
     print("You choose to go to the music festival today~ Enjoy your time~",random.choice(kaomoji_happy))
-    print(ascii_art_music)
+    print(ascii_art_anime)
     print()
     print("See you tomorrow for more pratices!!",random.choice(emoji_happy))
     input(f"{color_red}Press Enter to continue...{color_reset}")
@@ -3147,6 +3151,7 @@ sej_marks=0
 mm_marks=0
 sc_marks=0
 #-------------------------------------------------------------------------------------------------------
+
 bm_q=[
     " Selepas mandi, dia mengenakan __________ pada badannya agar harum.",
     "Kamus dwibahasa edisi baharu yang __________ itu berharga RM45.00 sahaja.",
@@ -3182,7 +3187,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,bm_q[i])
     print()
-    print({Fore.GREEN},bm_opt[i*4:(i+1)*4],{Fore.RESET})
+    print(Fore.GREEN,bm_opt[i*4:(i+1)*4],Fore.RESET)
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3231,7 +3236,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,bi_q[i])
     print()
-    print({Fore.GREEN},bi_opt[i*4:(i+1)*4],{Fore.RESET})
+    print(Fore.GREEN,bi_opt[i*4:(i+1)*4],Fore.RESET)
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3280,7 +3285,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,sej_q[i])
     print()
-    print({Fore.GREEN},sej_opt[i*4:(i+1)*4],{Fore.RESET})
+    print(Fore.GREEN,sej_opt[i*4:(i+1)*4],Fore.RESET)
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3328,7 +3333,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,mm_q[i])
     print()
-    print({Fore.GREEN},mm_opt[i*4:(i+1)*4],{Fore.RESET})
+    print(Fore.GREEN,mm_opt[i*4:(i+1)*4],Fore.RESET)
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3376,7 +3381,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,sc_q[i])
     print()
-    print({Fore.GREEN},sc_opt[i*4:(i+1)*4],{Fore.RESET})
+    print(Fore.GREEN,sc_opt[i*4:(i+1)*4],Fore.RESET)
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3389,3 +3394,30 @@ input()
 result=pyfiglet.figlet_format("Result Day",font="slant")
 result=termcolor.colored(result,color="Red")
 print(result)
+print("Your result is : ")
+print(f"BM :",bm_marks)
+print(f"BI: ",bi_marks)
+print(f"SEJARAH: ",sej_marks)
+print(f"MATHEMATICS: ",mm_marks)
+print(f"SCIENCE: ",sc_marks)
+total=bm_marks+bi_marks+sej_marks+mm_marks+sc_marks
+print("Total marks: ",total)
+if total>=40:
+    print("Congratulation on passing SPM,System will send you back to your world...")
+    input()
+    print("Sending...")
+    input()
+    print(f"{Fore.GREEN}You are home!")
+else:
+    print(f"You fail your spm exam...Do you repeat the game or trap in this world forever?")
+    choice=input("Enter your choice(Start Over/Stay): ").upper()
+    if choice=="START OVER":
+        attempts=+1
+        menu()
+    if choice not in ["START OVER","STAY"]:
+        print (f"{Fore.RED}Invalid Asnwer!")
+        choice=input("Enter your choice(Start Over/Stay): ").upper()
+    if choice=="START OVER":
+        print("You choose to give up and stay in this world forever:")
+
+        
