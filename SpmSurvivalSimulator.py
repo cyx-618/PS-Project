@@ -13,7 +13,7 @@ title=pyfiglet.figlet_format("SPM SURVIVAL SIMULATOR",font="big")
 title=termcolor.colored(title,color="green")
 print(title)
 print("Welcome to SPM Survival Simulator! you will be experiencing the life of a SPM student and with some challenges and miracle adventures!")
-print("----------------------------------------------------------------------------------------------------------------------------------------")
+print("-------------------------------------------------------------------------------------------------------------------------------------")
 
 #creating menu 
 coloredMenu=pyfiglet.figlet_format("Menu",font="isometric1")
@@ -59,5 +59,9 @@ def opyion1():
          f.write("Player Name: ",name,"\n")
          f.write("Player Gender:",gender.capitalize(),"\n")
          f.write("Number of Attempts:", int(attempts),"\n")
+
+
+#Write Game over as a function 
+#game over for stress lvel and study progress
 
 
