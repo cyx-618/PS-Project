@@ -14,7 +14,7 @@ title=termcolor.colored(title,color="green")
 print(title)
 print("Welcome to SPM Survival Simulator! you will be experiencing the life of a SPM student and with some challenges and miracle adventures!")
 print("-------------------------------------------------------------------------------------------------------------------------------------")
-
+input()
 #creating menu 
 coloredMenu=pyfiglet.figlet_format("Menu",font="isometric1")
 print(coloredMenu)

@@ -2375,7 +2375,7 @@ else:
     print()
     print(f"{color_blue}-{color_reset}"*100)
     print()
-    choice=str(input("Please Enter your choice (A/B)")).upper()
+    choice=str(input("Please Enter your choice (A/B): ")).upper()
     while choice!="A" and choice!="B":
         print("⚠️",f"{color_yellow}Invalid choice! Please enter A/B.{color_reset}")
         choice=str(input("Please Enter your choice (A/B)")).upper()
@@ -3182,7 +3182,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,bm_q[i])
     print()
-    print(Fore.GREEN,bm_opt[i*4:(i+1)*4],Fore.RESET)
+    print({Fore.GREEN},bm_opt[i*4:(i+1)*4],{Fore.RESET})
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3191,6 +3191,7 @@ for count,i in enumerate(indices):
         bm_marks+=2
     
 print(f"{Fore.RED}End of BM Paper,See you tommorrow for BI Paper{Fore.RESET}")
+input()
 #Day 1 end
 #----------------------------------------------------------------------------------------------------
 #Day 2  bi paper
@@ -3230,7 +3231,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,bi_q[i])
     print()
-    print(Fore.GREEN,bi_opt[i*4:(i+1)*4],Fore.RESET)
+    print({Fore.GREEN},bi_opt[i*4:(i+1)*4],{Fore.RESET})
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3239,6 +3240,7 @@ for count,i in enumerate(indices):
         bi_marks+=2 
     
 print(f"{Fore.RED}End of BI Paper,See you tommorrow for Sejarah Paper{Fore.RESET}")   
+input()
 #spm day 2 end 
 # ---------------------------------------------------------------------------------------------------
 # spm day 3 start
@@ -3278,7 +3280,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,sej_q[i])
     print()
-    print(Fore.GREEN,sej_opt[i*4:(i+1)*4],Fore.RESET)
+    print({Fore.GREEN},sej_opt[i*4:(i+1)*4],{Fore.RESET})
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3287,6 +3289,7 @@ for count,i in enumerate(indices):
         sej_marks+=2
     
 print(f"{Fore.RED}End of Sejarah Paper,See you tommorrow for MM Paper{Fore.RESET}")
+input()
 #end of day 3 spm
 #--------------------------------------------------------------------------------------------------
 #Day 4 Start
@@ -3325,7 +3328,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,mm_q[i])
     print()
-    print(Fore.GREEN,mm_opt[i*4:(i+1)*4],Fore.RESET)
+    print({Fore.GREEN},mm_opt[i*4:(i+1)*4],{Fore.RESET})
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3334,7 +3337,7 @@ for count,i in enumerate(indices):
         mm_marks+=2
     
 print(f"{Fore.RED}End of BM Paper,See you tommorrow for BI Paper{Fore.RESET}")
-
+input()
 #End of day 4 spm
 #------------------------------------------------------------------------------------------------------
 # Day 5 Start 
@@ -3373,7 +3376,7 @@ for count,i in enumerate(indices):
     print("-"*100)
     print(count+1,sc_q[i])
     print()
-    print(Fore.GREEN,sc_opt[i*4:(i+1)*4],Fore.RESET)
+    print({Fore.GREEN},sc_opt[i*4:(i+1)*4],{Fore.RESET})
     print()
     user=input("Your answer: ").upper()
     while user not in ["A","B","C","D"]:
@@ -3382,6 +3385,7 @@ for count,i in enumerate(indices):
         sc_marks+=2
     
 print(f"{Fore.RED}----------------------------------- End of SPM ------------------------------------{Fore.RESET}")
-
+input()
 result=pyfiglet.figlet_format("Result Day",font="slant")
 result=termcolor.colored(result,color="Red")
+print(result)
