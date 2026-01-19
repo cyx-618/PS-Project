@@ -12,6 +12,8 @@ import pyfiglet
 import sys
 title=pyfiglet.figlet_format("SPM SURVIVAL SIMULATOR",font="big")
 title=termcolor.colored(title,color="green")
+import colorama
+from colorama import Fore
 print(title)
 print("Welcome to SPM Survival Simulator! you will be experiencing the life of a SPM student and with some challenges and miracle adventures!")
 print("-------------------------------------------------------------------------------------------------------------------------------------")
@@ -45,8 +47,32 @@ def menu():
             
         
     exit
-        
+
+menu()    
 #Write Game over as a function 
 #game over for stress lvel and study progress
+
+
+#writing function for the sl and sp
+def sp_gameover():
+   sp=30
+   if sp<=50 :
+      print("Your study progress is less than 50,You could not attend SPM.")
+      choice=input("Do you want to start over again(Yes/No): ").upper()
+      if choice not in ["YES","NO"]:
+         print("Invalid Answer!") 
+         choice=input("Do you want to start over again(Yes/No): ").upper()
+      if choice=="YES":
+         menu()
+      if choice=="No":
+         exit
+def sl_gameover():
+   sl=99 
+   if sl>=80:
+      print("Your stress level is too high to attend SPM.")
+      print(f"{Fore.RED}Mental Unstable-Game Over")
+
+sp_gameover()
+sl_gameover()
 
 
