@@ -44,11 +44,9 @@ def menu():
             option=int(input("Please select an option: "))
         else:
             print("Game Start!")
-            
-        
     exit
 
-menu()    
+
 #Write Game over as a function 
 #game over for stress lvel and study progress
 
@@ -60,19 +58,32 @@ def sp_gameover():
       print("Your study progress is less than 50,You could not attend SPM.")
       choice=input("Do you want to start over again(Yes/No): ").upper()
       if choice not in ["YES","NO"]:
-         print("Invalid Answer!") 
+         print(f"{Fore.RED}Invalid Answer!{Fore.RESET}") 
          choice=input("Do you want to start over again(Yes/No): ").upper()
       if choice=="YES":
+         attempt=+1
          menu()
-      if choice=="No":
+      if choice=="NO":
+         print("You choose to give up and stay in this world forever...🥲")
          exit
 def sl_gameover():
    sl=99 
    if sl>=80:
       print("Your stress level is too high to attend SPM.")
-      print(f"{Fore.RED}Mental Unstable-Game Over")
+      print(f"{Fore.RED}Mental Unstable-Game Over{Fore.RESET}")
+      input()
+      choice=input("Do you want to start over again(Yes/No): ").upper()
+      if choice not in ["YES","NO"]:
+         print(f"{Fore.RED}Invalid Answer!{Fore.RESET}") 
+         choice=input("Do you want to start over again(Yes/No): ").upper()
+      if choice=="YES":
+         attempt+=1
+         menu()
+      if choice=="NO":
+         print("You choose to give up and stay in this world forever...😢")
+         exit
 
-sp_gameover()
 sl_gameover()
+
 
 
