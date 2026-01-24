@@ -1,74 +1,9 @@
-Player Name: rx
+Player Name: naruto
 Player Gender:M
-Number of Attempts:1
-Player Name: rc
+Spm marks: 20
+Player Name: light yagami
 Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: & C:/Users/Rachel/AppData/Local/Microsoft/WindowsApps/python3.13.exe c:/Users/Rachel/Documents/GitHub/PS-Project/SpmSurvivalSimulator.py
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: & C:/Users/Rachel/AppData/Local/Microsoft/WindowsApps/python3.13.exe c:/Users/Rachel/Documents/GitHub/PS-Project/MainGame.py
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: uuuu
+Spm marks: 0
+Player Name: light
 Player Gender:F
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: rc
-Player Gender:M
-Number of Attempts:1
-Player Name: yyy
-Player Gender:M
-Number of Attempts:1
-Player Name: I AM GAY
-Player Gender:M
-Number of Attempts:1
-Player Name: i am bro
-Player Gender:F
-Number of Attempts:1
-Player Name: ll
-Player Gender:M
-Player Name: m
-Player Gender:M
-Number of Attempts:1
-Player Name: oo
-Player Gender:M
-Number of Attempts:1
-Player Name: mm
-Player Gender:M
-Number of Attempts:1
-Player Name: a
-Player Gender:M
-Number of Attempts:1
-Player Name: a
-Player Gender:M
-Number of Attempts:1
-Player Name: ee
-Player Gender:F
-Number of Attempts:1
-Player Name: ee
-Player Gender:M
-Number of Attempts:1
+Spm marks: 0

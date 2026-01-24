@@ -19,39 +19,61 @@ color_blue="\033[34m"
 color_reset="\033[0m"
 color_pink="\033[35m"
 color_skyblue="\033[36m"
-#color end
-#let player to enter thier name and gender first 
+#color end (by kjq)
 
 import termcolor
 import pyfiglet
 import colorama
-from colorama import Fore,Back  #(by rc)
-import sys 
-
+from colorama import Fore 
 colorama.init(autoreset=True)
-from SpmSurvivalSimulator import menu
 
-menu()
 
-name=str(input("Enter your name: "))
-while name=="" or name==" ":
-   print(f"{Fore.RED}You did not enter your name!")
-   name=str(input("Enter your name: "))
-
-gender=["m","f","M","F","Male","male","MALE","Female","female","FEMALE"]
-playerG=str(input("Enter your gender(M/F): ") )
-while playerG not in gender :
-   print(f"{Fore.RED}Invalid Gender!")
-   playerG=str(input("Enter your gender(M/F): ") )
+def sl_gameover():
+  
+   if sl>=80:
+      print("Your stress level is too high to attend SPM.")
+      print(f"{Fore.RED}Mental Unstable-Game Over{Fore.RESET}")
+      
    
-#setting number of attempts
-attempts=1 
-with open("playerdata.txt","a") as f:
-   f.write("Player Name: "+name+"\n")
-   f.write("Player Gender:"+playerG.capitalize()+"\n")
-   f.write("Number of Attempts:"+str(attempts)+"\n")
+def sp_gameover():
 
+   if sp<=50 :
+      print("Your study progress is less than 50,You could not attend SPM.")
+     
+sp=0
+sl=0
+attempts=1
+
+def spm_game():
+   response=str(input("Do you want to reattempt the game ?(YES/NO): ")).upper()
+   while response not in ["YES","NO"]:
+      print(f"{Fore.RED}Invalid answer!")
+      response=str(input("Do you want to reattempt the game ?(YES/NO): ")).upper()
+   if response=="YES":
+      return True
+   else:
+      return False 
+
+   
+
+#--------------------------------------------------------------------------------------------------
+title=pyfiglet.figlet_format("SPM SURVIVAL SIMULATOR",font="big")
+title=termcolor.colored(title,color="green")
+#creating menu 
+coloredMenu=pyfiglet.figlet_format("Menu",font="isometric1")
 #front part of story
+def game_start():
+    print("Start of story ")
+        
+def spm_game():
+   response=str(input("Do you want to reattempt the game ?(YES/NO): ")).upper()
+   while response not in ["YES","NO"]:
+      print(f"{Fore.RED}Invalid answer!")
+      response=str(input("Do you want to reattempt the game ?(YES/NO): ")).upper()
+   if response=="YES":
+      return True
+   else:
+      return False 
 print(f"{Fore.GREEN}Game Start!!!")
 print("------------------------------------------------------------------------------------------ ")
 print("You are a university student who has already passed the SPM exam for a long time. One day, when you walked back home after you finished your lectures,suddenly fell into a big hole…  ")
@@ -124,8 +146,7 @@ input()
 #DAY 1
 #let sp =study progress, sl=stress level
 
-sp=0
-sl=0
+
 
 print("Today is the first day of your SPM exam preparation journey.")
 print("Your main mission for today is study ",f"{color_blue}Bahasa Melayu!{color_reset}")
@@ -798,7 +819,7 @@ if choice=="STUDY":
 else:
    sl-=5
    ascii_art_fishing=r"""
-         ,%&& %&& %
+    ,%&& %&& %
    ,%&%& %&%& %&
 %& %&% &%&% % &%
 % &%% %&% &% %&%&,
@@ -1315,6 +1336,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day8 End
 #Day9 Start
@@ -1463,6 +1485,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 9 End
 #Day 10 Starts
@@ -1611,6 +1634,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 10 End 
 #Day 11 Start
@@ -1766,6 +1790,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 11 End
 #Day 12 start
@@ -1954,6 +1979,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 12 End
 #Day 13 Start
@@ -2109,6 +2135,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #day 13 end
 #Day 14 start
@@ -2236,6 +2263,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #end of day 14
 #day 15 start 
@@ -2413,7 +2441,7 @@ else:
         input(f"{color_red}Press Enter to continue...{color_reset}")
     else:
         print("{Fore.RED}You choose to betray the system.Mission Fail.---SEE YOU")
-
+        spm_game() 
 
 
 print(f"{color_pink}~"*125,f"{color_reset}")
@@ -2432,6 +2460,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #end of day 15
 #day 16 start
@@ -2551,7 +2580,7 @@ else:
               ( (///))           ( |/  _______\|/____
 ~~~~~~~~~~~~~~~`~~~~'~~~~~~~~~~~~~\|,-'::::::::::::::
             _                 ,----':::::::::::::::::
-         {><_'c   _      _.--':MJP:::::::::::::::::::
+         {><_'c   _      _.--':::::::::::::::::::::::
 __,'`----._,-. {><_'c  _-':::::::::::::::::::::::::::
 :.:.:.:.:.:.:.\_    ,-'.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:
 .:.:.:.:.:.:.:.:`--'.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.
@@ -2580,6 +2609,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #end of day 16
 #Day 17 start
@@ -2719,6 +2749,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 17 end
 #Day 18 start
@@ -2867,6 +2898,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 18 end
 #day 19 start
@@ -3003,10 +3035,12 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 19 End
 #Day 20 Start
 print("Day 20...")
+sp_gameover()
 print("0Days left, tomorrow is the day!!!")
 print("-"*100)
 print("Today is the tenth day of your SPM exam preparation journey")
@@ -3094,6 +3128,7 @@ What is the science concept that is related to the situation?""",
 else:
     sl-=5
     ascii_art_stream="""
+
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
 ▓▓░░░░░░░░░░░░░░░░░░░░░▒▒▒▒░░░▒▒▒▒░░░░░░▓▓
@@ -3146,6 +3181,7 @@ print(f"""{Fore.BLUE}
 └──────────────────────────┘
 
 """)
+sl_gameover()
 input()
 #Day 20 End
 #---------------------------------------------------------------------------------------------------
@@ -3409,22 +3445,15 @@ print(f"MATHEMATICS: ",mm_marks)
 print(f"SCIENCE: ",sc_marks)
 total=bm_marks+bi_marks+sej_marks+mm_marks+sc_marks
 print("Total marks: ",total)
+input()
 if total>=40:
-    print("Congratulation on passing SPM,System will send you back to your world...")
+    print("Congratulation on passing SPM🤩,System will send you back to your world...")
     input()
-    print("Sending...")
+    print("Sending...🛸")
     input()
-    print(f"{Fore.GREEN}You are home!")
+    print(f"{Fore.GREEN}You are home!😝{Fore.RESET}")
 else:
-    print(f"You fail your spm exam...Do you repeat the game or trap in this world forever?")
-    choice=input("Enter your choice(Start Over/Stay): ").upper()
-    if choice=="START OVER":
-        attempts=+1
-        menu()
-    if choice not in ["START OVER","STAY"]:
-        print (f"{Fore.RED}Invalid Asnwer!")
-        choice=input("Enter your choice(Start Over/Stay): ").upper()
-    if choice=="START OVER":
-        print("You choose to give up and stay in this world forever:")
+    print(f"You fail your Spm exam...😔 You could not go back home...")
+    spm_game()
 
         
