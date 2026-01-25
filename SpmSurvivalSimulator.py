@@ -33,12 +33,11 @@ import pyfiglet
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
-#-------------------------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------------------------
-#putting all function we got so far
+#putting all function we got 
 
-def mood_state(ms):
+def mood_state():
    if sl>=75:
       print(f"{Fore.RED}Be careful of your stress level.You might fail ! ")
       return "Stressed Out"
@@ -74,21 +73,20 @@ def spm_game():
       return True
    else:
       return False 
-
+#learn this from ytb video 
+#resetting all the value to 0 when the palyer fail/ complete game 
 def reset_value():
     return 0
 
-            
-
 #-----------------------------------------------------------------------------------------------------
-
+#setting values we use
 total=0 #spm total marks 
 
 sp=0 #sp=study progress
 
 sl=0  #sl=stress level 
 
-ms=None  
+ms=None  #ms = mood state 
 
 #--------------------------------------------------------------------------------------------------
 title=pyfiglet.figlet_format("SPM SURVIVAL SIMULATOR",font="big")
@@ -129,10 +127,8 @@ def menu():
                 f.write("Player Name: "+name+"\n")
                 f.write("Player Gender:"+playerG.capitalize()+"\n")
                 f.write("Spm marks: "+str(total)+"\n")
-            #SETTING VARIABLE 
-            #let sp =study progress, sl=stress level    
-
-            print(f"{Fore.GREEN}Game Start!!!")
+            
+            print(f"{Fore.GREEN}Game Start!!!") #introduction to the story 
             print("------------------------------------------------------------------------------------------ ")
             print("You are a university student who has already passed the SPM exam for a long time. One day, when you walked back home after you finished your lectures,suddenly fell into a big hole…  ")
             print(f"""{Fore.CYAN}
@@ -143,7 +139,7 @@ def menu():
 ~~~|.|_|.|_|.|.|.|_|.|~~~               ‾‾
                   
                   """)
-
+            #all ascii art come from online 
             input()
             print("After the you woke up,you noticed that you are in a new world that you never been in… suddenly a virtual " 
             "taskbar appeared in front of you. ")
@@ -202,10 +198,7 @@ def menu():
 
             #20 days simulation before spm start
             #DAY 1
-            #let sp =study progress, sl=stress level
-
-
-
+            
             print("Today is the first day of your SPM exam preparation journey.")
             print("Your main mission for today is study ",f"{color_blue}Bahasa Melayu!{color_reset}")
             print(f"{color_green}(⚠️ Notice: This subject is very important in SPM!){color_reset}")
@@ -323,20 +316,6 @@ def menu():
                print("See you tomorrow for more studying!", random.choice(kaomoji_happy))
 
             #define a special function for mood state
-            ms=None
-            def mood_state(ms):
-               if sl>=80:
-                  print(f"{Fore.RED}Mission Fail! ")
-                  return "Stressed Out"
-                  
-               elif sl>=65:
-                  print(f"{Fore.RED}Caution!⚠️ Your stress level is at a dangerous !Low down your stress level first!")
-                  return "High Stress"
-                  
-
-               else:
-                  print(f"Your mood state is stable")
-                  return"Good"
                   
             input()
             print(f"""{Fore.BLUE}
@@ -358,7 +337,7 @@ def menu():
             #Day2 START
 
             print("Day 2...")
-            print("18Days left")
+            print("18 Days left")
             print("-"*100)
             print("Today is the second day of your SPM exam preparation journey.")
             print("Your main mission for today is study ",f"{color_blue}Bahasa Melayu!{color_reset}")
@@ -490,12 +469,13 @@ def menu():
             └──────────────────────────┘
 
             """)
+            #the reason why the bar isn't close is bcus the number is gonna move the stroke
             input()
             #Day2 End
             #Day3 Start
 
             print("Day 3...")
-            print("17Days left")
+            print("17 Days left")
             print("-"*100)
             print("Today is the third day of your SPM exam preparation journey.")
             print("Your main mission for today is study ",f"{color_blue}Bahasa Melayu!{color_reset}")
@@ -923,7 +903,8 @@ def menu():
             """)
             input()
             #Day5 End
-            #Day6 Start
+            #Day6 Start 
+            #HIDDEN PLOT 1
             print("Days 6...")
             print("14Days left")
             print("-"*100)
@@ -1859,6 +1840,7 @@ def menu():
             input()
             #Day 11 End
             #Day 12 start
+            #HIDDEN PLOT 2
             print("Day 12...")
             print("8 Days left")
             print("-"*100)
@@ -2335,6 +2317,7 @@ def menu():
             input()
             #end of day 14
             #day 15 start 
+            #HIDDEN PLOT 3
 
             print("Day 15...")
             print("5 Days left")
@@ -2825,7 +2808,7 @@ def menu():
             #Day 18 start
 
             print("Day 18...")
-            print("2Days left")
+            print("2 Days left")
             print("-"*100)
             print("Today is the eighteenth day of your SPM exam preparation journey")
             print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
@@ -3114,10 +3097,11 @@ def menu():
             #Day 20 Start
             print("Day 20...")
             print()
+            #checking if the palyer sp larger than 50 1 day before spm
             if sp_gameover()=="fail":
                 return "fail"
             print()
-            print("0Days left, tomorrow is the day!!!")
+            print("0 Days left, tomorrow is the day!!!")
             print("-"*100)
             print("Today is the tenth day of your SPM exam preparation journey")
             print(f"Your main mission for today is to study {color_blue}Science{color_reset}!")
@@ -3262,7 +3246,7 @@ def menu():
             #Day 20 End
             #---------------------------------------------------------------------------------------------------
             #Spm day 
-            #Day 1 spm bm paper 
+            #Day 1 spm  
             #setting all  marks for subjects
             bm_marks=0
             bi_marks=0
@@ -3298,15 +3282,14 @@ def menu():
 
             bm_ans=["D","B","A","B","A","C","D","A","B","D"]
             indices=list(range(len(bm_q)))
-            random.shuffle(indices)
-
-
-            for count,i in enumerate(indices):
+            random.shuffle(indices) #shuffle questions (learn from onine)
+             
+            for count,i in enumerate(indices): #enumerate is sort of iterating integer
                print()
                print("-"*100)
                print(count+1,bm_q[i])
                print()
-               print(Fore.GREEN + bm_opt[i*4:(i+1)*4])
+               print(Fore.GREEN+str(bm_opt[i*4:(i+1)*4])+Fore.RESET)
                print()
                user=input("Your answer: ").upper()
                while user not in ["A","B","C","D"]:
@@ -3355,7 +3338,7 @@ def menu():
                print("-"*100)
                print(count+1,bi_q[i])
                print()
-               print(Fore.GREEN + bi_opt[i*4:(i+1)*4])
+               print(Fore.GREEN+str(bi_opt[i*4:(i+1)*4])+Fore.RESET)
                print()
                user=input("Your answer: ").upper()
                while user not in ["A","B","C","D"]:
@@ -3404,7 +3387,7 @@ def menu():
                print("-"*100)
                print(count+1,sej_q[i])
                print()
-               print(Fore.GREEN + sej_opt[i*4:(i+1)*4])
+               print(Fore.GREEN +str(sej_opt[i*4:(i+1)*4])+Fore.RESET)
                print()
                user=input("Your answer: ").upper()
                while user not in ["A","B","C","D"]:
@@ -3452,7 +3435,7 @@ def menu():
                print("-"*100)
                print(count+1,mm_q[i])
                print()
-               print(Fore.GREEN + mm_opt[i*4:(i+1)*4])
+               print(Fore.GREEN+str(mm_opt[i*4:(i+1)*4])+Fore.RESET)
                print()
                user=input("Your answer: ").upper()
                while user not in ["A","B","C","D"]:
@@ -3460,7 +3443,7 @@ def menu():
                if user==mm_ans[i]:
                   mm_marks+=2
                
-            print(f"{Fore.RED}End of MM Paper,See you tommorrow for Science Paper{Fore.RESET}")
+            print(f"{Fore.RED}End of Mathematics Paper,See you tommorrow for Science Paper{Fore.RESET}")
             input()
             #End of day 4 spm
             #------------------------------------------------------------------------------------------------------
@@ -3500,7 +3483,7 @@ def menu():
                print("-"*100)
                print(count+1,sc_q[i])
                print()
-               print(Fore.GREEN + sc_opt[i*4:(i+1)*4])
+               print(Fore.GREEN+str(sc_opt[i*4:(i+1)*4])+Fore.RESET)
                print()
                user=input("Your answer: ").upper()
                while user not in ["A","B","C","D"]:
@@ -3522,11 +3505,12 @@ def menu():
             print(f"{Fore.CYAN}SCIENCE: {Fore.RESET}",sc_marks)
            
             total=bm_marks+bi_marks+sej_marks+mm_marks+sc_marks
-            print("Total marks: ",total)
+            print(f"{Fore.YELLOW}Total marks: {Fore.RESET}",total)
             with open ("playerdata.txt","w") as f:
                 f.write("Player Name: "+name+"\n")
                 f.write("Player Gender:"+playerG.capitalize()+"\n")
                 f.write("Spm marks: "+str(total)+"\n")
+            #rewriting user data if the the player survive until today, if no marks stays with 0
             input()
             if total>=40:
                print("Congratulation on passing SPM🤩,System will send you back to your world...")
@@ -3557,12 +3541,15 @@ def menu():
             print(f"{Fore.YELLOW}Than you for joining the game!")
             input()
             break
-
+#refer to chatgpt
 while True:
     result = menu()   
-
+    #in the menu function including sp&sl_gameover function if one of the function return"fail"
+    #then "fail" return to the menu() which is result 
     if result == "fail":
         if spm_game():
+            #asking if the player wanna play one more time; yes, return True
+            #No ,return False
             sp = reset_value()
             sl=reset_value()
             total=reset_value()
@@ -3573,3 +3560,9 @@ while True:
             break        
 
     break  
+
+#credit :
+#cyx:help to combine file,write and research the functions,adding sp and sl bar,testing,create txt file(basically work on structure )
+#work:introduction of story ,5 day of spm and end part of project 
+#kjq:research on all the subjects questions , putting ascii art,help in testing
+#work:DAY 1---DAY 20 of study simulation
