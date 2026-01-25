@@ -2569,9 +2569,7 @@ print(f"{color_pink}~"*125,f"{color_reset}")
 
 
 
-<<<<<<< HEAD
-=======
-=======
+
 #import random module for emoji, can ask emoji randomly no need to insert emoji one by one
 import random
 emoji_happy=['😀', '😁', '😆', '😄', '😃', '😊', '😇', '🤗', '😎', '🥳','😀','😁','😆','😄','😃','😊','😇','🤗','😎','🥳', '🤗', '😌', '😏', '😙', '😚', '😛', '😜', '😝', '🤪', '😍', '😆', '😄', '😃', '😁']
@@ -3532,5 +3530,4 @@ else:
     input(f"{color_red}Press Enter to continue...{color_reset}")
 
 #End for the eighth days
->>>>>>> a41d27ee0869b17a1be4be3ff818b7fcd7a43e63
->>>>>>> b90b90917c019e738bf9c21adf9ce6d92f69ef01
+
