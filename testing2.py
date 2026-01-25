@@ -1,18 +1,6 @@
-#Spm day 
-#Day 1 spm bm paper 
 import colorama
 from colorama import Fore
 import random
-import sys
-
-#------------------------------------------------------------------------------------------------------
-#setting all  marks for subjects
-bm_marks=0
-bi_marks=0
-sej_marks=0
-mm_marks=0
-sc_marks=0
-#-------------------------------------------------------------------------------------------------------
 bm_q=[
     " Selepas mandi, dia mengenakan __________ pada badannya agar harum.",
     "Kamus dwibahasa edisi baharu yang __________ itu berharga RM45.00 sahaja.",
@@ -57,6 +45,7 @@ for count,i in enumerate(indices):
         bm_marks+=2
     
 print(f"{Fore.RED}End of BM Paper,See you tommorrow for BI Paper{Fore.RESET}")
+input()
 #Day 1 end
 #----------------------------------------------------------------------------------------------------
 #Day 2  bi paper
@@ -105,6 +94,7 @@ for count,i in enumerate(indices):
         bi_marks+=2 
     
 print(f"{Fore.RED}End of BI Paper,See you tommorrow for Sejarah Paper{Fore.RESET}")   
+input()
 #spm day 2 end 
 # ---------------------------------------------------------------------------------------------------
 # spm day 3 start
@@ -153,6 +143,7 @@ for count,i in enumerate(indices):
         sej_marks+=2
     
 print(f"{Fore.RED}End of Sejarah Paper,See you tommorrow for MM Paper{Fore.RESET}")
+input()
 #end of day 3 spm
 #--------------------------------------------------------------------------------------------------
 #Day 4 Start
@@ -200,7 +191,7 @@ for count,i in enumerate(indices):
         mm_marks+=2
     
 print(f"{Fore.RED}End of BM Paper,See you tommorrow for BI Paper{Fore.RESET}")
-
+input()
 #End of day 4 spm
 #------------------------------------------------------------------------------------------------------
 # Day 5 Start 
@@ -248,12 +239,7 @@ for count,i in enumerate(indices):
         sc_marks+=2
     
 print(f"{Fore.RED}----------------------------------- End of SPM ------------------------------------{Fore.RESET}")
-
-print("Your result is : ")
-print(f"BM :",bm_marks)
-print(f"BI: ",bi_marks)
-print(f"SEJARAH: ",sej_marks)
-print(f"MATHEMATICS: ",mm_marks)
-print(f"SCIENCE: ",sc_marks)
-total=bm_marks+bi_marks+sej_marks+mm_marks+sc_marks
-print("Total marks: ",total)
+input()
+result=pyfiglet.figlet_format("Result Day",font="slant")
+result=termcolor.colored(result,color="Red")
+print(result)
