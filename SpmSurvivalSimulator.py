@@ -149,14 +149,14 @@ def menu():
                   """)
             #all ascii art come from online 
             input()
-            print("After the you woke up,you noticed that you are in a new world that you never been in… suddenly a virtual " 
+            print("After you woke up,you noticed that you are in a new world that you never been in… suddenly a virtual " 
             "taskbar appeared in front of you. ")
             print()
             print(f"{Fore.CYAN}-------------------------------------------------WELCOME TO SPM SURVIVAL SIMULATOR---------------------------------------------------")
             input()
             print(f'A female voice echoed in your head:"Hi {name}",My name is Siri,I am your virtual assistant in this world.')
-            print("Let me simply explain what happened to you.You have been trapped in this world , all you have to do is fin-" 
-            "ish the mission given to you. ")
+            print("Let me simply explain what happened to you.You have been trapped in this world , all you have to do is finish the mission given to you. ")
+            
 
             #simply expalin to the player game rules
 
@@ -199,8 +199,8 @@ def menu():
             f"If you choose leisure activities, stress level-5.If your study progress less than 50 a day before SPM ,you cannot attempt SPM {Fore.RED}(Mission Fail){Fore.RESET}.")
             print("")
             input()
-            print(f"You should manage your{Fore.RED} stress level and study progress properly and pass ypur SPM exam within overall average of 40% " \
-            f"{Fore.RED}and above {Fore.RESET}to win the game.You will be asigned for studying five subjects which are {Fore.YELLOW}Malay, English, Sejarah, Math, and Science.")
+            print(f"You should manage your{Fore.RED} stress level and study progress properly and pass your SPM exam within overall average of 40% " \
+            f"{Fore.RED}and above {Fore.RESET}to win the game.You will be assigned for studying five subjects which are {Fore.YELLOW}Malay, English, Sejarah, Math, and Science.")
             input()
             print(f"{Fore.MAGENTA}{pyfiglet.figlet_format('Good Luck Pals!',font='starwars')}")
             print()
@@ -213,7 +213,7 @@ def menu():
             print("Today is the first day of your SPM exam preparation journey.")
             print("Your main mission for today is study ",f"{color_blue}Bahasa Melayu!{color_reset}")#highlight the subject name using ansi escape code (color_reset is used to prevent the color from affecting any text printed afterward)
             print(f"{color_green}(⚠️ Notice: This subject is very important in SPM!){color_reset}")
-            print("Stay focused and keep pushing forward!",random.choice(kaomoji_fighting))#ask the system choose a emoji that inside the kaomoji_fighting list randomly
+            print("Stay focus and keep pushing forward!",random.choice(kaomoji_fighting))#ask the system choose a emoji that inside the kaomoji_fighting list randomly
             print()
             print(f"{color_green}-{color_reset}"*130)#create a visual separator
             print()
@@ -368,11 +368,11 @@ def menu():
             print("Today is the second day of your SPM exam preparation journey.")
             print("Your main mission for today is study ",f"{color_blue}Bahasa Melayu!{color_reset}")
             print(f"{color_green}(⚠️ Notice: This subject is very important in SPM!){color_reset}")
-            print("Stay focused and keep pushing forward!",random.choice(kaomoji_fighting))
+            print("Stay focus and keep pushing forward!",random.choice(kaomoji_fighting))
             print()
             print(f"{color_skyblue}-{color_reset}"*130)#create a visual separator
             print()
-            print("Do you want to ",f"{color_red}STUDY{color_reset}", random.choice(emoji_study), "or ",f"{color_red}WATCH CARTOON{color_reset}",random.choice(emoji_rest),"today?",f"{color_pink}(Watching Totoro, which used to be your and your brother's favourite cartoon.)",f"{color_reset}")
+            print("Do you want to ",f"{color_red}STUDY{color_reset}", random.choice(emoji_study), "or ",f"{color_red}WATCH CARTOON{color_reset}",random.choice(emoji_rest),"today?",f"{color_pink}(Watching Totoro, which used to be you and your brother's favourite cartoon.)",f"{color_reset}")
             print(f"{color_pink}STUDY{color_reset} or {color_pink}WATCH CARTOON{color_reset}")
             choice=str(input("Please enter your choice:")).upper()
             #check validity of input
@@ -657,7 +657,7 @@ def menu():
             #Day4 Start
 
             print("Day 4...")
-            print("16Days left")
+            print("16 Days left")
             print(f"{color_green}-{color_reset}"*130)
             print("Today is the fourth day of your SPM exam preparation journey.")
             print(f"Your main mission for today is study {color_blue}Bahasa Melayu!{color_reset}")
@@ -765,10 +765,10 @@ def menu():
             else:
                sl-=5
                ascii_art_movie=r"""
-                                       o
+                              o
                      o       /
-                        \     /
-                        \   /
+                      \     /
+                       \   /
                         \ /
             +--------------v-------------+
             |  __________________      @ |
@@ -810,7 +810,7 @@ def menu():
             #Day5 Start
 
             print("Day 5...")
-            print("15Days left")
+            print("15 Days left")
             print(f"{color_skyblue}-{color_reset}"*130)
             print("Today is the fifth day of your SPM exam preparation journey.")
             print(f"Your main mission for today is study {color_blue}English{color_reset}!")
@@ -919,9 +919,9 @@ def menu():
                sl-=5
                ascii_art_fishing=r"""
                ,%&& %&& %
-             ,%&%& %&%& %&
-            %& %&% &%&% % &%
-            % &%% %&% &% %&%&,
+              ,%&%& %&%& %&
+             %& %&% &%&% % &%
+             % &%% %&% &% %&%&,
             &%&% %&%& %& &%& %
             %%& %&%& %&%&% %&%%&
             &%&% %&% % %& &% %%&
@@ -966,7 +966,7 @@ def menu():
             #Day6 Start 
             #HIDDEN PLOT 1
             print("Days 6...")
-            print("14Days left")
+            print("14 Days left")
             print(f"{color_yellow}-{color_reset}"*130)
             print("Today is the sixth day of your SPM exam preparation journey.")
             print(f"Your main mission for today is study {color_blue}English{color_reset}!")
@@ -1295,7 +1295,7 @@ def menu():
                print()
                print("Chapter 1: We are introduced to the narrator, a pilot, and his ideas about grown-ups")
                print()
-               print("Once when i was six years old i saw a magnificent picture in a book, called True Stories from Nature,")
+               print("Once when I was six years old I saw a magnificent picture in a book, called True Stories from Nature,")
                print("about the primeval forest. It was a picture of a boa constictor in the act of swallowing a wild beast.")
                print("Here is a copy of the drawing.")
                print()
@@ -1306,7 +1306,7 @@ def menu():
                print
                input(f"{color_red}Press Enter to continue...{color_reset}")
                print()
-               print("In those days i thought a lot about jungle adventure, and eventuallymanaged to make my first drawing......")
+               print("In those days I thought a lot about jungle adventure, and eventually managed to make my first drawing......")
                print()
                print("See you tomorrow for more studying!", random.choice(emoji_happy))
                print()
@@ -1342,7 +1342,7 @@ def menu():
             print()
             print(f"{color_skyblue}-{color_reset}"*130)
             print()
-            print(f"Do you want to {color_red}STUDY{color_reset}", random.choice(emoji_study), "or", f"{color_red}go for cycling (Healthy and fun){color_reset}", random.choice(emoji_rest), "today?")
+            print(f"Do you want to {color_red}STUDY{color_reset}", random.choice(emoji_study), "or", f"{color_red}go for cycling (Healthy and Fun){color_reset}", random.choice(emoji_rest), "today?")
             print(f"{color_pink}STUDY{color_reset} or {color_pink}GO FOR CYCLING{color_reset}")
             choice=str(input("Please enter your choice:")).upper()
             #check validity of input
@@ -1600,7 +1600,7 @@ Apakah faktor yang mencetuskan perang tersebut?
 
 
             """
-               print("You choose to go to the anime feast today. Enjoy your time!", random.choice(kaomoji_happy))
+               print("You choose to go to the anime fest today. Enjoy your time!", random.choice(kaomoji_happy))
                print(ascii_art_animefest)
                print()
                print("See you tomorrow for more studying!", random.choice(emoji_happy))
@@ -1635,7 +1635,7 @@ Apakah faktor yang mencetuskan perang tersebut?
             print("Today is the tenth day of your SPM exam preparation journey")
             print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
             print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
-            print("Fast and focused---that's how winner do it!!", random.choice(kaomoji_happy))
+            print("Fast and focus---that's how winner do it!!", random.choice(kaomoji_happy))
             print()
             print(f"{color_green}-{color_reset}"*130)
             print()
@@ -1791,7 +1791,7 @@ Mengapakah dasar tersebut diperkenalkan?
             print("Today is the eleventh day of your SPM exam preparation journey")
             print(f"Your main mission for today is study {color_blue}Sejarah{color_reset}!")
             print(f"{color_green}(⚠️ Remember: This subject is very important in your SPM exam!){color_reset}")
-            print("Saty sharp, saty confident!!!", random.choice(kaomoji_happy))
+            print("Saty sharp, stay confident!!!", random.choice(kaomoji_happy))
             print()
             print(f"{color_skyblue}-{color_reset}"*130)
             print()
@@ -1958,7 +1958,7 @@ IV Menjamin keselamatan serantau
             print()
             print(f"{color_yellow}-{color_reset}"*130)
             print()
-            print(f"Today your mission is do a revision for SEJARAH but {color_red}you're very sad today because you sudden miss your family...{color_reset}")
+            print(f"Today your mission is do a revision for SEJARAH but {color_red}you're very sad today because you suddenly miss your family...{color_reset}")
             print(f"Do you want to {color_red}STUDY{color_reset}",random.choice(emoji_study),"or", f"{color_red}WALK AROUND THE PARK (System suggest)(You may meet a person that help you to cheer up){color_reset}",random.choice(emoji_rest),"today?")
             print(f"{color_pink}STUDY{color_reset} or {color_pink}WALK AROUND THE PARK{color_reset}")
             choice=str(input("Please enter your choice:")).upper()
@@ -2080,8 +2080,8 @@ Apakah tujuan dasar tersebut?
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
                print()
-               print("The park is quiet, with only the sound of leaves rustling and birds calling in the diatance.")
-               print("You're feeling too sad because you miss your family more tha usual.")
+               print("The park is quiet, with only the sound of leaves rustling and birds calling in the distance.")
+               print("You're feeling too sad because you miss your family more than usual.")
                print("As you walk along the path, you notice that a man dressed entirely in black and sitting alone on a bench.")
                print("You hesitate for a moment, then sit down beside him...")
                print()
@@ -2100,9 +2100,9 @@ Apakah tujuan dasar tersebut?
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
                print()
-               print(f"{color_green}'As time slowly passes, I suddenly realize what i have lost.'{color_reset}, Marcus continue saying.")
+               print(f"{color_green}'As time slowly passes, I suddenly realize what I have lost.'{color_reset}, Marcus continue saying.")
                print("You listen quietly and seriously")
-               print(f"{color_green}'That's why i come this park every evening...'{color_reset}.")
+               print(f"{color_green}'That's why I come this park every evening...'{color_reset}.")
                print(f"{color_green}'This park reminds me time are still moving, whether we are ready or not.'{color_reset}")
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
@@ -2110,7 +2110,7 @@ Apakah tujuan dasar tersebut?
                print("Two of you sit in silence,talking about the life, regret moment, hope, and the people you love and take care about.")
                print("Without realizing, you both welcome the sunset of the day together.")
                print("You stand up with the sunset at your back.")
-               print(f"{color_green}'It was nice meeting you, I should go now'{color_reset}, you says.")
+               print(f"{color_green}'It was nice meeting you, I should go now'{color_reset}, you say.")
                print(f"He smiles and says, {color_green}'Take care. Don't make the people you love and the people who love you, wait too long.'{color_reset}")
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
@@ -2460,7 +2460,7 @@ Apakah tujuan dasar tersebut?
             print("Today is the fifteenth day of your SPM exam preparation journey")
             print(f"Your main mission for today is study {color_blue}Mathematics{color_reset}!")
             print(f"{color_green}(⚠️ Caution: This subject is a crucial part in your SPM exam!){color_reset}")
-            print("You’re one step closer to acing SPM!!! Keep going!!!", random.choice(kaomoji_happy))
+            print("You’re one step closer to ace SPM!!! Keep going!!!", random.choice(kaomoji_happy))
             print()
             print(f"{color_yellow}-{color_reset}"*130)
             print()
@@ -2596,12 +2596,12 @@ Calculate the property assessment tax payable by Suhaini for each half-year.
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
                print()
-               print("After a short wait, you see your parents face.")
-               print("Their face looked haggard because they has been searching you since last two weeks...")
+               print("After a short wait, you see your parent face.")
+               print("Their face looked pale because they has been searching you since last two weeks...")
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
                print()
-               print("After a brief shock, you see your parents start crying.")
+               print("After a brief shock, you see your parent start crying.")
                print("In voice close to tears, they asked where you had been, why you hadn't come home for two weeks, and where you were now.")
                print()
                input(f"{color_red}Press Enter to continue...{color_reset}")
@@ -2623,7 +2623,7 @@ Calculate the property assessment tax payable by Suhaini for each half-year.
                   print("Your heart aches. You really want to tell them the whole truth")
                   print("But you can't...")
                   print("After struggling, you say you suddenly go to a emergency trip with your friends")
-                  print(f"{color_green}'But I will come back home after one month I promise!'{color_reset}, you say to your parents.")
+                  print(f"{color_green}'But I will come back home after one month I promise!'{color_reset}, you say to your parent.")
                   print()
                   input(f"{color_red}Press Enter to continue...{color_red}")
                   print()
@@ -3250,7 +3250,7 @@ What is the victim's situation that requires this method.
             ⠀⠀⠀⠈⣙⠓⠒⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
             """
 
-               print("You choose to attending music concert today~ Enjoy your time~",random.choice(kaomoji_happy))
+               print("You choose to attend music concert today~ Enjoy your time~",random.choice(kaomoji_happy))
                print(color_skyblue+ascii_art_concert+color_reset)
                print()
                print("See you tomorrow, let's keep practicing!!",random.choice(emoji_happy))
@@ -3287,7 +3287,7 @@ What is the victim's situation that requires this method.
             print("Final Day!!!")
             print("0 Days left, tomorrow is the day!!!")
             print(f"{color_skyblue}-{color_reset}"*130)
-            print("Today is the tenth day of your SPM exam preparation journey")
+            print("Today is the twentieth day of your SPM exam preparation journey")
             print(f"Your main mission for today is to study {color_blue}Science{color_reset}!")
             print(f"{color_green}(⚠️ Remember: This subject is very helpful in your SPM exam!){color_reset}")
             print("Get ready to shine!!! Your journey starts now!!!", random.choice(kaomoji_happy))
@@ -3502,7 +3502,7 @@ What is the science concept that is related to the situation?
                if user==bm_ans[i]:
                   bm_marks+=2
                
-            print(f"{Fore.RED}End of BM Paper,See you tommorrow for BI Paper{Fore.RESET}")
+            print(f"{Fore.YELLOW}End of Bahasa Melayu Paper,See you tommorrow for English Paper{Fore.RESET}")
             print()
             press_enter_to_continue()
             #Day 1 end
@@ -3514,7 +3514,7 @@ What is the science concept that is related to the situation?
 """,
                """ How long have they ________ there?
 """,
-               """ ________ to Germany last year. 
+               """ She ________ to Germany last year. 
 """,
                """ I drink coffee ________. 
 """,
@@ -3564,7 +3564,7 @@ What is the science concept that is related to the situation?
                if user==bi_ans[i]:
                   bi_marks+=2 
                
-            print(f"{Fore.YELLOW}End of BI Paper,See you tommorrow for Sejarah Paper{Fore.RESET}")   
+            print(f"{Fore.YELLOW}End of English Paper,See you tommorrow for Sejarah Paper{Fore.RESET}")   
             print()
             press_enter_to_continue()
             #spm day 2 end 
@@ -3574,7 +3574,8 @@ What is the science concept that is related to the situation?
             sej_q=[
                """ Apakah tugas Temenggung dalam Kerajaan Kesultanan Melayu Melaka? 
 """,
-               """ Bagaimanakah Perjanjian Persekutuan Tanah Melayu 1948 membela nasib penduduk asal di Tanah Melayu
+               """ Bagaimanakah Perjanjian Persekutuan Tanah Melayu 1948 membela nasib penduduk asal di Tanah Melayu?
+
 """,
                """ Bagaimanakah Britiah menumpaskan kegiatan Min Yuen?
 """,
@@ -3626,7 +3627,7 @@ What is the science concept that is related to the situation?
                if user==sej_ans[i]:
                   sej_marks+=2
 
-            print(f"{Fore.YELLOW}End of Sejarah Paper,See you tommorrow for MM Paper{Fore.RESET}")
+            print(f"{Fore.YELLOW}End of Sejarah Paper,See you tommorrow for Mathematics Paper{Fore.RESET}")
             print()
             press_enter_to_continue()
             #end of day 3 spm
@@ -3771,7 +3772,7 @@ Calculate the return on investment (ROI) of Shakir.
                 f.write("Player Name: "+name+"\n")
                 f.write("Player Gender:"+playerG.capitalize()+"\n")
                 f.write("Spm marks: "+str(total)+"\n")
-            #rewriting user data if the the player survive until today, if no marks stays with 0
+            #rewriting user data if the the player survive until today, if no, marks stays with 0
             input()
             if total>=40:
                print("Congratulation on passing SPM🤩,System will send you back to your world...")
@@ -3780,6 +3781,9 @@ Calculate the return on investment (ROI) of Shakir.
                input()
                print(f"{Fore.GREEN}You are home!😝{Fore.RESET}")
                input()
+               sp = reset_value()
+               sl=reset_value()
+               total=reset_value()
             else:
                print(f"You fail your Spm exam...😔 You could not go back home...")
                return "fail"
@@ -3804,7 +3808,10 @@ Calculate the return on investment (ROI) of Shakir.
             break
 #refer to chatgpt
 while True:
-    result = menu()   
+    result = menu()
+    sp = reset_value()
+    sl=reset_value()
+    total=reset_value()   
     #in the menu function including sp&sl_gameover function if one of the function return"fail"
     #then "fail" return to the menu() which is result 
     if result == "fail":
@@ -3817,13 +3824,19 @@ while True:
             continue       
         else:
             print("You choose to stay in this world forever...😣")
+            sp = reset_value()
+            sl=reset_value()
+            total=reset_value()
             input()
             break        
 
     break  
 
-#credit :
-#cyx:help to combine file,write and research the functions,adding sp and sl bar,testing,create txt file(basically work on structure )
+#Work Division:
+#cyx:help to combine file,write and research on the functions(except clear screen function),
+#adding sp and sl bar,testing,create txt file(basically work on structure )
 #work:introduction of story ,5 day of spm and end part of project 
-#kjq:research on all the subjects questions, putting ascii art, help in testing, storyline, clear screen function, and help in adjust the final look,
+
+#kjq:research on all the subjects questions, putting ascii art, help in testing, storyline, 
+#clear screen function, and help in adjust the final look,
 #work:DAY 1---DAY 20 of study simulation
