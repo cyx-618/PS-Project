@@ -18,6 +18,7 @@ emoji_fighting=['💪','🔥','⚔️','🏋️‍♂️','🤼‍♀️','🤺'
 kaomoji_fighting=["(ง •̀_•́)ง","٩(ˊᗜˋ*)و","(ง'̀-'́)ง","(ง°ل͜°)ง","(ง⌐□ل͜□)ง","(ง ͠° ͟ل͜ ͡°)ง","(ง •̀_•́)ง🔥","(ง'̀-'́)ง🔥","٩(๑`ȏ´๑)۶","(ง'̀-'́)ง💥"]
 kaomoji_happy=['(＾▽＾)','(≧ω≦)','(☆▽☆)','(•‿•)','(｡•̀ᴗ-)✧','(★^O^★)','(⌒‿⌒)','(•‿•)','(｡♥‿♥｡)','(づ｡◕‿‿◕｡)づ']
 #import emoji module end
+
 #color (Ansi escape code) add color to text using ANSI escape codes.
 #\033 is escape character, [32m is color code
 #define color variable using ansi escape code
@@ -78,6 +79,7 @@ def spm_game():
    else:
       return False 
 #functions refer to https://www.youtube.com/watch?v=yriw5Zh406s and gemini 
+
 #resetting all the value to 0 when the palyer fail/ complete game 
 def reset_value():
     return 0
@@ -93,6 +95,7 @@ def press_enter_to_continue(): #use to define a function the function name is pr
 
 #-----------------------------------------------------------------------------------------------------
 #setting values we use
+
 total=0 #spm total marks 
 
 sp=0 #sp=study progress
@@ -133,7 +136,8 @@ def menu():
                 print(f"{Fore.RED}You did not enter your name!")
                 name=str(input("Enter your name: "))
             gender=["m","f","M","F","Male","male","MALE","Female","female","FEMALE"]
-            playerG=str(input("Enter your gender(M/F): ") )
+            playerG=str(input("Enter your gender(M/F): ") ) 
+            #input player gender 
             while playerG not in gender :
                 print(f"{Fore.RED}Invalid Gender!")
                 playerG=str(input("Enter your gender(M/F): ") )
@@ -144,7 +148,7 @@ def menu():
             
             print(f"{Fore.GREEN}Game Start!!!") #introduction to the story 
             print("-"*130)
-            print("You are a university student who has already passed the SPM exam for a long time. One day, when you walked back home after you finished your lectures,suddenly fell into a big hole…  ")
+            print("You are a university student who has already passed the SPM exam for a long time. One day, when you walked back home after you finished your lectures,suddenly you fell into a big hole…  ")
             print(f"""{Fore.CYAN}
                        
             |   _   _                 
@@ -153,7 +157,7 @@ def menu():
 ~~~|.|_|.|_|.|.|.|_|.|~~~               ‾‾
                   
                   """)
-            #all ascii art come from online 
+            
             input()
             print("After you woke up,you noticed that you are in a new world that you never been in… suddenly a virtual " 
             "taskbar appeared in front of you. ")
@@ -201,7 +205,7 @@ def menu():
             print("-"*130)
             press_enter_to_continue()
             print(f"In daily life, if you choose to study, study progress +5, but if you answer the questios wrongly, stress level +2." \
-                  f"If your stree level reaches 80 and above it consider as {Fore.RED}Mission Fail.{Fore.RESET}"\
+                  f"If your stree level reaches more than 80 it consider as {Fore.RED}Mission Fail.{Fore.RESET}"\
             f"If you choose leisure activities, stress level-5.If your study progress less than 50 a day before SPM ,you cannot attempt SPM {Fore.RED}(Mission Fail){Fore.RESET}.")
             print("")
             input()
@@ -1138,9 +1142,9 @@ def menu():
 
                print(r"""
                      
-                        /~~~\________/~~~\
-                       (  o  )      (  o  )
-                        \___/  ++++  \___/
+                      /~~~\________/~~~\
+                     (  o  )      (  o  )
+                      \___/  ++++  \___/
                         | \          / |
                         |   \o____o/   |
                         |%%   #### oooo|
@@ -1345,7 +1349,7 @@ def menu():
             #Day8 Start
 
             print("Day 8...")
-            print("12Days left")
+            print("12 Days left")
             print(f"{color_skyblue}-{color_reset}"*130)
             print("Today is the eighth day of your SPM exam preparation journey.")
             print(f"Your main mission for today is study {color_blue}English{color_reset}!")
@@ -3145,7 +3149,7 @@ What is the energy change that occur in the battery?
             #Day 18 end
             #day 19 start
             print("Day 19...")
-            print("1 Days left")
+            print("1 Day left")
             print(f"{color_green}-{color_reset}"*130)
             print("Today is the nineteenth day of your SPM exam preparation journey")
             print(f"Your main mission for today is to study {color_blue}Science{color_reset}!")
@@ -3297,7 +3301,7 @@ What is the victim's situation that requires this method.
             if sp_gameover()=="fail":
                 return "fail"
             print("Final Day!!!")
-            print("0 Days left, tomorrow is the day!!!")
+            print("0 Day left, tomorrow is the day!!!")
             print(f"{color_skyblue}-{color_reset}"*130)
             print("Today is the twentieth day of your SPM exam preparation journey")
             print(f"Your main mission for today is to study {color_blue}Science{color_reset}!")
@@ -3816,6 +3820,9 @@ Calculate the return on investment (ROI) of Shakir.
         else:
             print()
             print(f"{Fore.YELLOW}Than you for joining the game! ^_^")
+            print()
+            print("Exiting...")
+
             input()
             break
 
@@ -3847,6 +3854,7 @@ while True:
 #for this part reference same as spm_game() function ,they are related
 
 #---------------------------------------------------------------------------------------------------------
+
 #Work Division:
 
 #CYX: help to combine file,write and research on the functions(except clear screen function),
