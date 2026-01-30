@@ -625,9 +625,9 @@ def menu():
                | ,|._ |
                | `A  _|__
                |__|\_\   \ O
-                     \  ._|.)
-                     \___A
-                     _|_ |\  SSt
+                      \  ._|.)
+                       \___A
+                          _|_ |\  SSt
                """
                print("You choose to do drawing today. Enjoy your time!", random.choice(kaomoji_happy)) 
                print(color_skyblue+ascii_art_drawing+color_reset)
@@ -1074,8 +1074,8 @@ def menu():
                input()
                print("Siri send you to a mysterious mountain named 'Alien Mountain...⛰︎ '")
                print("While you are enjoying your time hiking mountain, you suddenly heard a sound ")
-               sound=pyfiglet.figlet_format(f"{color_yellow}Buzz~Buzz~Buzz~{color_reset}", font="standard")
-               print(sound)
+               sound=pyfiglet.figlet_format("Buzz~ Buzz~ Buzz~", font="standard")
+               print(Fore.LIGHTYELLOW_EX+sound+Fore.RESET)
                print()
                input()
                print("You follow the sound and you hide behind a big tree and you saw a grey-two-meter tall creature, is an alien!")
