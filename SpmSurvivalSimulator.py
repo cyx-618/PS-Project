@@ -28,6 +28,7 @@ color_blue="\033[34m"
 color_reset="\033[0m"
 color_pink="\033[35m"
 color_skyblue="\033[36m"
+#refer to https://youtube.com/shorts/pQKNrkUdYlM?si=8TvJmVzUNQm6m-as
 #color end (by kjq)
 
 import termcolor
@@ -35,6 +36,7 @@ import pyfiglet
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
+#https://www.youtube.com/shorts/uP5xLEfP9Ts, https://www.youtube.com/watch?v=u51Zjlnui4Y ,https://www.youtube.com/watch?v=P5ZT2stxJPI
 
 #-------------------------------------------------------------------------------------------------
 #putting all function we got 
@@ -75,7 +77,7 @@ def spm_game():
       return True
    else:
       return False 
-#learn this from ytb video 
+#functions refer to https://www.youtube.com/watch?v=yriw5Zh406s and gemini 
 #resetting all the value to 0 when the palyer fail/ complete game 
 def reset_value():
     return 0
@@ -83,8 +85,11 @@ def reset_value():
 #use to pause the program until the user presses enter, and then clear the screen
 import os #import the os module so can interact with the operating system, to clear the terminal
 def press_enter_to_continue(): #use to define a function the function name is press enter to continue
-    input(f"{color_red}Press Enter to continue{color_reset}")#pause the program and wait for the user (using ansi escape code to change color , make the message more visible)
-    os.system("cls" if os.name=="nt" else "clear")#to clear the screen (if the os is window it use cls otherwise it use clear)
+    input(f"{color_red}Press Enter to continue{color_reset}") #pause the program and wait for the user (using ansi escape code to change color , make the message more visible)
+    os.system("cls" if os.name=="nt" else "clear") #to clear the screen (if the os is window it use cls otherwise it use clear)
+
+#functions refer to chatgpt and https://www.youtube.com/shorts/iZodhgdZldA ,https://youtube.com/shorts/dfH3EPvQanE?si=OIesCmntRAYORJsW
+#all reference had did modification to fit the game 
 
 #-----------------------------------------------------------------------------------------------------
 #setting values we use
@@ -101,6 +106,7 @@ title=pyfiglet.figlet_format("SPM SURVIVAL SIMULATOR",font="big")
 title=termcolor.colored(title,color="green")
 #creating menu 
 coloredMenu=pyfiglet.figlet_format("Menu",font="isometric1")
+#menu code refer to https://www.youtube.com/watch?v=63nw00JqHo0&list=LL&index=24
 
 def menu():
     while True:
@@ -319,6 +325,8 @@ def menu():
                print("💪",f"{color_pink}Quiz Ended!!!{color_reset}") 
                print("Your final score is:",score,"out of",len(questions),random.choice(kaomoji_happy))#printing the summarize for user to look at the final score for that day
                
+               #question code refer to https://www.youtube.com/watch?v=zehwgTB0vV8
+
             else:#else in case the user want to play game 
                #stress level-5
                sl-=5
@@ -333,6 +341,8 @@ def menu():
                │        A│
                └─────────┘
                """
+               #all ascii art code copy from https://emojicombos.com/bar and https://www.asciiart.eu/gallery
+
                print("You choose to play games today. Enjoy your time! (｡•̀ᴗ-)✧") 
                print(color_yellow+ascii_art_games+color_reset)#f are only needed if want to insert variables inside the text(ansi escape code stored as string)(change the color befor text printed and then change the color back to default)
                print()
@@ -1074,6 +1084,8 @@ def menu():
                input()
                print("Siri send you to a mysterious mountain named 'Alien Mountain...⛰︎ '")
                print("While you are enjoying your time hiking mountain, you suddenly heard a sound ")
+               print()
+               print()
                sound=pyfiglet.figlet_format("Buzz~ Buzz~ Buzz~", font="standard")
                print(Fore.LIGHTYELLOW_EX+sound+Fore.RESET)
                print()
@@ -3438,7 +3450,7 @@ What is the science concept that is related to the situation?
             press_enter_to_continue()
             #Day 20 End
             #---------------------------------------------------------------------------------------------------
-            #Spm day 
+            #Spm day start 
             #Day 1 spm  
             #setting all  marks for subjects
             bm_marks=0
@@ -3772,7 +3784,7 @@ Calculate the return on investment (ROI) of Shakir.
                 f.write("Player Name: "+name+"\n")
                 f.write("Player Gender:"+playerG.capitalize()+"\n")
                 f.write("Spm marks: "+str(total)+"\n")
-            #rewriting user data if the the player survive until today, if no, marks stays with 0
+            #rewriting and updating user data if the the player survive until today, if no, marks stays with 0
             input()
             if total>=40:
                print("Congratulation on passing SPM🤩,System will send you back to your world...")
@@ -3803,10 +3815,11 @@ Calculate the return on investment (ROI) of Shakir.
             
         else:
             print()
-            print(f"{Fore.YELLOW}Than you for joining the game!")
+            print(f"{Fore.YELLOW}Than you for joining the game! ^_^")
             input()
             break
-#refer to chatgpt
+
+
 while True:
     result = menu()
     sp = reset_value()
@@ -3831,12 +3844,15 @@ while True:
             break        
 
     break  
+#for this part reference same as spm_game() function ,they are related
 
+#---------------------------------------------------------------------------------------------------------
 #Work Division:
-#cyx:help to combine file,write and research on the functions(except clear screen function),
+
+#CYX: help to combine file,write and research on the functions(except clear screen function),
 #adding sp and sl bar,testing,create txt file(basically work on structure )
 #work:introduction of story ,5 day of spm and end part of project 
 
-#kjq:research on all the subjects questions, putting ascii art, help in testing, storyline, 
+#KJQ: research on all the subjects questions, putting ascii art, help in testing, storyline, 
 #clear screen function, and help in adjust the final look,
 #work:DAY 1---DAY 20 of study simulation

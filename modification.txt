@@ -1,0 +1,239 @@
+So this file is basically stated the differences between our own code and the youtube tutorial video 
+___________________________________________________________________________________________________
+
+CYX PART:
+
+1) For function spm_game()
+
+Youtube video
+
+def play_again():
+
+    response = input("Do you want to play again? (yes or no): ")
+    response = response.upper()
+
+    if response == "YES":
+        return True
+    else:
+        return False
+---------------------------------------------------------------------------------------------
+My code:
+def spm_game():
+   response=str(input("Do you want to reattempt the game ?(YES/NO): ")).upper()
+   while response not in ["YES","NO"]:
+      print(f"{Fore.RED}Invalid answer!")
+      response=str(input("Do you want to reattempt the game ?(YES/NO): ")).upper()
+   if response=="YES":
+      return True
+   else:
+      return False
+
+So basically my code is related to sp_gameover() & sl_gameover().So if one of the function
+return "fail" then python will procede to this spm_game() function. Whether to start over or not
+
+*****************************************************************************************************
+
+2)Menu function
+
+Youtube Video :
+
+while option != 0:
+    if option == 1:
+        # do option 1 stuff
+        print("Option 1 has been called.")
+    elif option == 2:
+        # do option 2 stuff
+        print("Option 2 has been called.")
+    elif option == 3:
+        option3()
+    else:
+        print("Invalid option.")
+
+print()
+---------------------------------------------------------------------------------------------------------
+
+My code:
+
+def menu():
+    while True:
+        print("[A] Start Game")
+        print("[B] View History")
+        print("[C] Exit Game")
+        reply=input("Enter your choice(A/B/C): ").upper()
+          while reply not in ["A","B","C"]:
+            print(f"{Fore.RED}Invalid Answer! Select again!")
+            reply=input("Enter your choice(A/B/C): ").upper()
+          if reply=="A":
+                   My game code 
+                   Including sp_gameover() and sl_gameover()
+          elif reply=="B"
+              Shows History
+          else:
+               print("Than you for joining the game! ^_^")
+               break
+
+Since my menu function only run while is true , so when the palyer fail, sp pr sl functions
+will return "fail"---> then check spm_game() function .If answer = yes ,then the menu function fun again.
+If the answer==no then the menu function will break .
+______________________________________________________________________________________________________________
+
+KJQ PART :
+
+1) Question Format 
+Youtube tutorial: 
+questions=("How many elements are in the periodic table?: ",
+           "Which animal lays the largest eggs?: ",
+           "What is the most abundant gas in Earth's atmosphere?: ",
+           "How many bones are in the human body?: ",
+           "Which planet in the solar system is the hottest?: ")
+
+options=(('A. 116','B. 117','C. 118','D. 119'),
+         ('A. Whale','B. Crocodile','C. Elephant','D. Ostrich'),
+         ('A. Nitrogen','B. Oxygen','C. Carbon Dioxide','D. Hydrogen'),
+         ('A. 206','B. 207','C. 208','D. 209'),
+         ('A. Mercury','B. Venus','C. Earth','D. Mars'))
+
+answers=('C','D','A','A','B')
+guesses=[]
+score=0
+question_num=0
+
+for question in questions:
+    print("-------------------------------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+
+    guess=input("Enter (A,B,C,D): ").upper()
+    guesses.append(guess)
+    if guess==answers[question_num]:
+        score+=1
+        print("CORRECT!")
+    else:
+        print("INCORRECT!")
+        print(f"{answers[question_num]} is the correct answer")
+    question_num+=1
+
+print("-------------------------------------")
+print("             RESULTS                 ")
+print("-------------------------------------")
+
+print("answer: ",end="")
+for answer in answers:
+    print(answer,end=" ")
+print()
+
+print("guesses: ",end="")
+for guess in guesses:
+    print(guess,end=" ")
+print()
+
+score=int(score/len(questions)*100)
+print(f"Your score is: {score}%")
+
+
+#--------------------------------------------------------------------------------------------------------
+
+My code: 
+
+questions=[
+        "1) Dalam cerita-cerita zaman dahulu, Sang Kancil ialah seekor __________ yang pintar.",
+        "2) Selepas mandi, dia mengenakan __________ pada badannya agar harum.",
+        "3) Ah Meng terpaksa bercakap dengan nada yang _______ kerana ayahnya mengalami masalah pendengaran.",
+        "4) Kenaikan harga barangan keperluan menjelang musim perayaan begitu ___________ sehingga sukar dikawal oleh kerajaan.",
+        "5) Kamus dwibahasa edisi baharu yang __________ itu berharga RM45.00 sahaja."
+    ]
+    #multiple choice 4 options for each question
+
+options=[
+        ["A. Orang","B. Haiwan","C. Makhluk","D. Ternakan"],
+        ["A. bunga-bungaan","B. ubat-ubatan","C. biji-bijian","D. bau-bauan"],
+        ["A. kuat","B. kasar","C. tinggi","D. kesat"],
+        ["A. mengejut","B. menonjol","C. mendesak","D. mendadak"],
+        ["A. nipis","B. tebal","C. berkilat","D. berwarna"]
+    ]
+    #store for correct answer for each question
+answers=[
+        "B","D","C","D","B"
+
+    ]
+    #explaination for each questions
+explainations=[
+        "Sang Kancil adalah watak dalam cerita rakyat yang terkenal sebagai haiwan yang cerdik. Oleh itu, pilihan yang tepat untuk melengkapkan ayat tersebut adalah 'Haiwan', kerana ia merujuk kepada jenis makhluk yang dimaksudkan.",
+        "Pilihan yang tepat adalah 'bau-bauan' kerana ia merujuk kepada wangian yang digunakan selepas mandi untuk membuat badan harum. 'Bunga-bungaan', 'ubat-ubatan', dan 'biji-bijian' tidak sesuai dalam konteks ini.",
+        "Ah Meng perlu bercakap dengan nada yang tinggi kerana ayahnya mengalami masalah pendengaran. Ini bermakna suara perlu lebih kuat dan jelas agar ayahnya dapat mendengar dengan baik.",
+        "Kenaikan harga barangan keperluan yang 'mendadak' menunjukkan perubahan yang cepat dan drastik, menjadikannya sukar untuk dikawal oleh kerajaan. Pilihan lain tidak sesuai dengan konteks yang menggambarkan situasi ini.",
+        "Kamus dwibahasa yang 'tebal' menunjukkan bahawa ia mempunyai banyak halaman dan maklumat, menjadikannya lebih berharga. Pilihan lain seperti 'nipis' dan 'berkilat' tidak sesuai dengan konteks harga yang diberikan."
+    ]
+
+    #initial score and question number
+score=0
+question_number=0
+    #queation loop
+print("Great! Let's do some quiz for Bahasa Melayu.",random.choice(emoji_happy))
+    #use for loop to go through all questions
+for question_number in range(len(questions)):
+    print("-"*100)
+    print()
+    print(questions[question_number])
+        #print iption for each question
+    for option in options[question_number]:
+            print(option)
+    print()
+        #ask for answer
+    answers_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+    while answers_input not in ["A","B","C","D"]:
+            #check whether the input is valid or not
+        print("⚠️",f"{color_yellow}Invalid answer! Please enter A, B, C, or D.{color_reset}")
+        answers_input=str(input("Please enter your answer (A/B/C/D): ")).upper()
+        #check the correctness of the answer
+    if answers_input==answers[question_number]:
+        print()
+        print(random.choice(emoji_correct),"Correct Answer!")
+        print(f"{color_green}Excellent!! You got it right.{color_reset}",random.choice(kaomoji_fighting))
+        score=score+1
+    else:
+        print()
+        print(random.choice(emoji_wrong),"Wrong Answer!")
+        print(f"{color_yellow}Almost there! Try again.{color_reset}",random.choice(kaomoji_fighting))
+    print()
+    print(f"{color_skyblue}Explanation:",explainations[question_number],f"{color_reset}")
+    print()
+    print("Your current score is :", score,"out of",len(questions))
+    print()
+    print("Keep moving forward!",random.choice(kaomoji_fighting))
+    print()
+    input(f"{color_red}Press Enter to continue...{color_reset}")
+question_number=question_number+1
+print()
+print("💪",f"{color_pink}Quiz Ended!!!{color_reset}") 
+print("Your final score is:",score,"out of",len(questions),random.choice(kaomoji_happy))
+
+************************************************************************************************************8
+
+2) Clear screen function
+
+Youtube tutorial:
+
+import os
+import time
+os.system("is")
+time.sleep(2)
+os.system("cls")  # For Windows
+os.system("clear")  # For Linux and macOS
+#--------------------------------------------------------------------------------------------------------
+Another Youtube Tutorial:
+
+import os
+os.system('cls' if os.name == 'nt' else 'clear')#cls-window clear-linux/mac cls for which os name start with nt
+
+#--------------------------------------------------------------------------------------------------------
+
+My code:
+
+import os 
+*import the os module so can interact with the operating system, to clear the terminal
+
+def press_enter_to_continue(): #use to define a function the function name is press enter to continue
+    input(f"{color_red}Press Enter to continue{color_reset}")#pause the program and wait for the user (using ansi escape code to change color , make the message more visible)
+    os.system("cls" if os.name=="nt" else "clear")#to clear the screen (if the os is window it use cls otherwise it use clear)
